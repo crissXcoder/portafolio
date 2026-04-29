@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Globe, BarChart3 } from "lucide-react";
+import { ArrowUpRight, Globe, BarChart3 } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Container } from "@/components/ui/Container";
 import { portfolioData, type Project } from "@/data/portfolio";
 
@@ -91,7 +92,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               target="_blank" 
               className="text-white hover:text-indigo-400 transition-colors flex items-center gap-2 text-xs font-semibold"
             >
-              <Github className="w-4 h-4" />
+              <GithubIcon className="w-4 h-4" />
               Ver Código
             </a>
           )}

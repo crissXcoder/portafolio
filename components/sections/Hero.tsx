@@ -6,8 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { portfolioData } from "@/data/portfolio";
 import { 
   ChevronRight, 
-  Github, 
-  Linkedin, 
   Mail, 
   Code2, 
   Database, 
@@ -19,6 +17,8 @@ import {
   Terminal,
   type LucideIcon
 } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 /**
  * TECHNICAL CARD COMPONENT
@@ -214,11 +214,11 @@ export function Hero() {
               <div className="flex items-center gap-3 p-1 rounded-2xl bg-white/5 border border-white/10">
                 {portfolioData.socialLinks.map((social: any, i: number) => {
                   const Icon = ({
-                    github: Github,
-                    linkedin: Linkedin,
+                    github: GithubIcon,
+                    linkedin: LinkedinIcon,
                     email: Mail,
                     other: ChevronRight
-                  } as Record<string, LucideIcon>)[social.platform] || ChevronRight;
+                  } as Record<string, any>)[social.platform] || ChevronRight;
 
                   return (
                     <a

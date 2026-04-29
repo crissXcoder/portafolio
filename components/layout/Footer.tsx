@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Mail, ArrowUp, ChevronRight, type LucideIcon } from "lucide-react";
+import { Mail, ArrowUp, ChevronRight, type LucideIcon } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Container } from "@/components/ui/Container";
 import { portfolioData } from "@/data/portfolio";
 
@@ -44,11 +46,11 @@ const Footer = () => {
             <div className="flex gap-4">
               {portfolioData.socialLinks.map((social: any, i: number) => {
                 const Icon = ({
-                  github: Github,
-                  linkedin: Linkedin,
+                  github: GithubIcon,
+                  linkedin: LinkedinIcon,
                   email: Mail,
                   other: ChevronRight
-                } as Record<string, LucideIcon>)[social.platform] || ChevronRight;
+                } as Record<string, any>)[social.platform] || ChevronRight;
 
                 return (
                   <a
