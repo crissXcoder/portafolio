@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design System Tokens */
+  --color-background: #020617;
+  --color-foreground: #f8fafc;
+  --color-surface: #0f172a;
+  --color-border: #1e293b;
+  --color-muted: #94a3b8;
+  --color-primary: #6366f1;
+  --color-secondary: #0ea5e9;
+  --color-accent: #10b981;
+  --color-warning: #fbbf24;
+
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Utilities */
+.glass-panel {
+  @apply bg-surface/80 backdrop-blur-md border border-border;
+}
+
+.blueprint-grid {
+  background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
