@@ -76,7 +76,7 @@ const Projects = () => {
             transition={{ delay: 0.3 }}
           >
             <a 
-              href={portfolioData.socialLinks.find((s: any) => s.platform === 'github')?.url || "#"} 
+              href={portfolioData.socialLinks.find((s) => s.platform === 'github')?.url || "#"} 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-indigo-400 focus-visible:outline-offset-2"
@@ -254,11 +254,11 @@ const ProjectCard = ({
           {project.details && (
             <button 
               onClick={onViewDetails}
-              className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400 cursor-pointer"
-              title="Ver Detalles"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white border border-indigo-500/20 rounded-xl font-semibold text-xs transition-all focus-visible:outline-2 focus-visible:outline-indigo-400 cursor-pointer group/details"
               aria-label={`Ver detalles de ${project.title}`}
             >
-              <Info className="w-4 h-4" aria-hidden="true" />
+              <Info className="w-3.5 h-3.5 group-hover/details:scale-110 transition-transform" aria-hidden="true" />
+              <span>Ver Detalles</span>
             </button>
           )}
         </div>

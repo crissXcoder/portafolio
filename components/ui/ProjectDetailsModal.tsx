@@ -16,7 +16,9 @@ import {
   Briefcase,
   Terminal,
   Layout as LayoutIcon,
-  Globe
+  Globe,
+  Zap,
+  CheckCircle2
 } from "lucide-react";
 import { type Project } from "@/data/portfolio";
 import { GithubIcon } from "@/components/icons/GithubIcon";
@@ -143,7 +145,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto p-8 md:p-12 pt-10 custom-scrollbar">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                {/* Left Column: Context & Core Info */}
+                  {/* Left Column: Context & Core Info */}
                 <div className="lg:col-span-7 space-y-10">
                   <section>
                     <div className="flex items-center gap-3 mb-4">
@@ -164,6 +166,23 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
                       {project.details?.contribution}
                     </p>
                   </section>
+
+                  {project.highlights && project.highlights.length > 0 && (
+                    <section>
+                      <div className="flex items-center gap-3 mb-5">
+                        <Zap className="w-5 h-5 text-yellow-400" />
+                        <h3 className="text-xl font-semibold text-white">Puntos Clave</h3>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {project.highlights.map((highlight, i) => (
+                          <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/2 border border-white/5">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                            <span className="text-slate-300 text-xs font-medium">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  )}
 
                   <section>
                     <div className="flex items-center gap-3 mb-5">

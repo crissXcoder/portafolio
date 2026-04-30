@@ -39,7 +39,7 @@ export function WorkPrinciples() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {portfolioData.workPrinciples.map((principle: any, i: number) => (
+          {portfolioData.workPrinciples.map((principle, i: number) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}

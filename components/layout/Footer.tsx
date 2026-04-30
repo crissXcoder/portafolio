@@ -45,13 +45,13 @@ const Footer = () => {
 
           <div className="flex flex-col justify-end md:items-end gap-12">
             <div className="flex gap-4">
-              {portfolioData.socialLinks.map((social: any, i: number) => {
+              {portfolioData.socialLinks.map((social, i: number) => {
                 const Icon = ({
                   github: GithubIcon,
                   linkedin: LinkedinIcon,
                   email: Mail,
                   other: ChevronRight
-                } as Record<string, any>)[social.platform] || ChevronRight;
+                } as Record<string, LucideIcon | React.ComponentType<{ className?: string }>>)[social.platform] || ChevronRight;
 
                 return (
                   <a

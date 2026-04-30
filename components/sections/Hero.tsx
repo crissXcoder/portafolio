@@ -88,7 +88,7 @@ function TechnicalCard() {
               <Award className="w-3 h-3" />
               Credenciales Verificadas
             </div>
-            {portfolioData.certifications.slice(0, 2).map((cert: any, i: number) => (
+            {portfolioData.certifications.slice(0, 2).map((cert, i: number) => (
               <div key={i} className="flex items-center gap-3 text-xs text-slate-400 bg-white/2 p-2 rounded-lg border border-white/5">
                 <ScrollText className="w-3.5 h-3.5 text-indigo-400" />
                 <span className="truncate">{cert.title}</span>
@@ -213,13 +213,13 @@ export function Hero() {
               </a>
               
               <div className="flex items-center gap-3 p-1 rounded-2xl bg-white/5 border border-white/10">
-                {portfolioData.socialLinks.map((social: any, i: number) => {
+                {portfolioData.socialLinks.map((social, i: number) => {
                   const Icon = ({
                     github: GithubIcon,
                     linkedin: LinkedinIcon,
                     email: Mail,
                     other: ChevronRight
-                  } as Record<string, any>)[social.platform] || ChevronRight;
+                  } as Record<string, LucideIcon | React.ComponentType<{ className?: string }>>)[social.platform] || ChevronRight;
 
                   return (
                     <a

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Brain, Code, Database, Server, Smartphone, Layout } from "lucide-react";
+import { Brain, Code, Database, Server, Smartphone, Layout, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 import { portfolioData, type ContributionArea } from "@/data/portfolio";
@@ -25,13 +25,14 @@ const Collaboration = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {portfolioData.contributionAreas.map((area: ContributionArea, index: number) => {
-            const iconMap: Record<string, any> = {
-              "Desarrollo Web Full-stack": Code,
-              "Arquitectura de Datos": Database,
-              "IA & Automatización": Brain,
-              "Sistemas Backend": Server,
-              "UI/UX Engineering": Layout,
+            const iconMap: Record<string, LucideIcon> = {
+              "Desarrollo Frontend": Code,
+              "Bases de Datos": Database,
+              "Datos e IA Aplicada": Brain,
+              "Desarrollo Backend": Server,
+              "UI/UX Aplicado": Layout,
               "Sistemas Móviles": Smartphone,
+              "Análisis y Arquitectura": Brain,
             };
 
             return (
@@ -51,7 +52,7 @@ const Collaboration = () => {
   );
 };
 
-const CollaborationCard = ({ area, index }: { area: ContributionArea & { icon: any }; index: number }) => {
+const CollaborationCard = ({ area, index }: { area: ContributionArea & { icon: LucideIcon }; index: number }) => {
   const Icon = area.icon;
 
   return (
