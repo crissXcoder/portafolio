@@ -18,8 +18,17 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Container } from "@/components/ui/Container";
 import { portfolioData, type Project } from "@/data/portfolio";
+import ProjectDetailsModal from "@/components/ui/ProjectDetailsModal";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="proyectos" className="py-32 bg-slate-950 relative overflow-hidden">
       {/* Background Ornaments */}
@@ -82,15 +91,34 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.projects.map((project: Project, index: number) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard 
+              key={project.title} 
+              project={project} 
+              index={index} 
+              onViewDetails={() => handleOpenModal(project)}
+            />
           ))}
         </div>
+
+        <ProjectDetailsModal 
+          project={selectedProject}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </Container>
     </section>
   );
 };
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+const ProjectCard = ({ 
+  project, 
+  index, 
+  onViewDetails 
+}: { 
+  project: Project; 
+  index: number;
+  onViewDetails: () => void;
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const getTypeIcon = (type: string) => {
@@ -223,17 +251,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </a>
           )}
           
-          {project.liveUrl !== "#" && (
-            <a 
-              href={project.liveUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
+          {project.details && (
+            <button 
+              onClick={onViewDetails}
+              className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400 cursor-pointer"
               title="Ver Detalles"
               aria-label={`Ver detalles de ${project.title}`}
             >
               <Info className="w-4 h-4" aria-hidden="true" />
-            </a>
+            </button>
           )}
         </div>
       </div>
