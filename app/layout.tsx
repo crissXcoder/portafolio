@@ -20,19 +20,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://crisalmont.me"),
+  metadataBase: new URL("https://crissxcoder.github.io"),
   title: {
     default: "Cristhian Altamirano Montes | Portafolio",
     template: "%s | Cristhian Altamirano Montes",
   },
   description: "Portafolio de Cristhian Altamirano Montes, estudiante de Ingeniería en Sistemas de Comunicación, enfocado en desarrollo web, bases de datos, sistemas digitales e inteligencia artificial aplicada.",
   keywords: ["Software Developer", "Ingeniería en Sistemas", "UNA", "Costa Rica", "Next.js", "React", "Data Science", "AI", "Desarrollo Web", "Bases de Datos"],
-  authors: [{ name: "Cristhian Altamirano Montes", url: "https://github.com/crisalmont" }],
+  authors: [{ name: "Cristhian Altamirano Montes", url: "https://github.com/crissXcoder" }],
   creator: "Cristhian Altamirano Montes",
   openGraph: {
     type: "website",
     locale: "es_CR",
-    url: "https://crisalmont.me", // Reemplazar con la URL real si es diferente
+    url: "https://crissxcoder.github.io", // Reemplazar con la URL real si es diferente
     siteName: "Cristhian Altamirano Montes | Portafolio",
     title: "Cristhian Altamirano Montes | Portafolio",
     description: "Desarrollo de soluciones digitales robustas con enfoque en ingeniería, datos e IA.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Cristhian Altamirano Montes | Portafolio",
     description: "Estudiante de Ingeniería en Sistemas enfocado en desarrollo web, datos e IA.",
     images: ["/og-image.png"],
-    creator: "@crisalmont", // Reemplazar con el handle real si existe
+    creator: "@crissXcoder", // Reemplazar con el handle real si existe
   },
   robots: {
     index: true,

@@ -104,7 +104,7 @@ export const portfolioData: PortfolioData = {
     subtitle: "Sistemas web · Bases de datos · Inteligencia Artificial aplicada",
     description: "Estudiante avanzado de Ingeniería en Sistemas de Comunicación con enfoque en la construcción de soluciones de software robustas, escalables y orientadas a datos. Especializado en arquitecturas modernas y metodologías ágiles.",
     tagline: "Enfocado en sistemas web, gestión de datos e IA aplicada.",
-    email: "crisalmont@gmail.com",
+    email: "crisaltamontes@gmail.com",
     location: "Costa Rica",
   },
 
@@ -148,7 +148,7 @@ export const portfolioData: PortfolioData = {
       issuer: "SCRUMstudy",
       year: "2025",
       description: "Certificación en fundamentos de Scrum, gestión de sprints, roles y artefactos del framework para el desarrollo ágil de proyectos.",
-      url: "https://www.scrumstudy.com/certification/scrum-fundamentals-certified",
+      url: "/certs/scrum-fundamentals.pdf",
       color: "#6366f1"
     },
     {
@@ -157,7 +157,7 @@ export const portfolioData: PortfolioData = {
       issuer: "Cisco Networking Academy",
       year: "2024",
       description: "Formación introductoria en conceptos básicos de ciencia de datos, análisis exploratorio, recopilación de información y fundamentos de visualización.",
-      url: "#",
+      url: "/certs/cisco-data-science.pdf",
       color: "#00b4d8"
     }
   ],
@@ -176,8 +176,8 @@ export const portfolioData: PortfolioData = {
         "Panel administrativo con control de accesos",
         "Digitalización total de procesos comunitarios"
       ],
-      githubUrl: "https://github.com/crisalmont/sigadi-rc",
-      liveUrl: "#",
+      githubUrl: "https://github.com/crissXcoder/canasysFronEnd",
+      liveUrl: "https://sigadi-rc.org/",
     },
     {
       title: "Water-sf",
@@ -192,8 +192,8 @@ export const portfolioData: PortfolioData = {
         "Optimización avanzada de rendimiento",
         "Indexación estructurada para servicios públicos"
       ],
-      githubUrl: "https://github.com/crisalmont/water-sf",
-      liveUrl: "#",
+      githubUrl: "https://github.com/1van2004/Water-SF",
+      liveUrl: "https://www.water-sf.com/",
     },
     {
       title: "AstroAssist AI",
@@ -208,8 +208,8 @@ export const portfolioData: PortfolioData = {
         "Checkout visual con estructura modular",
         "Interfaz inmersiva con temática espacial"
       ],
-      githubUrl: "https://github.com/crisalmont/astroassist",
-      liveUrl: "#",
+      githubUrl: "https://github.com/crissXcoder/AstroAssist-AI-FrontEnd",
+      liveUrl: "https://astro-assist-ai.vercel.app/en",
     },
     {
       title: "AutoStock Pro S.A.",
@@ -353,17 +353,17 @@ export const portfolioData: PortfolioData = {
   socialLinks: [
     {
       label: "GitHub",
-      url: "https://github.com/crisalmont",
+      url: "https://github.com/crissXcoder",
       platform: "github"
     },
     {
       label: "LinkedIn",
-      url: "https://linkedin.com/in/crisalmont",
+      url: "https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5",
       platform: "linkedin"
     },
     {
       label: "Email",
-      url: "mailto:crisalmont@gmail.com",
+      url: "mailto:crisaltamontes@gmail.com",
       platform: "email"
     }
   ]

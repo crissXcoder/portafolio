@@ -213,13 +213,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </a>
           )}
           
-          <button 
-            className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
-            title="Detalles"
-            aria-label={`Ver detalles de ${project.title}`}
-          >
-            <Info className="w-4 h-4" aria-hidden="true" />
-          </button>
+          {project.liveUrl !== "#" && (
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
+              title="Ver Detalles"
+              aria-label={`Ver detalles de ${project.title}`}
+            >
+              <Info className="w-4 h-4" aria-hidden="true" />
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
