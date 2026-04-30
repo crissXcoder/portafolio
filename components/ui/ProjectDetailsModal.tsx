@@ -135,7 +135,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="relative w-full max-w-5xl max-h-[92vh] bg-slate-950 border border-border-subtle rounded-[40px] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
+            className="relative w-full max-w-5xl max-h-[95vh] md:max-h-[92vh] bg-slate-950 border border-border-subtle rounded-card md:rounded-[40px] shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -147,30 +147,30 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-8 right-8 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-border-subtle text-text-muted hover:text-white transition-all z-50 group cursor-pointer"
+              className="absolute top-4 right-4 md:top-8 md:right-8 p-2.5 md:p-3 rounded-xl md:rounded-2xl bg-white/5 hover:bg-white/10 border border-border-subtle text-text-muted hover:text-white transition-all z-50 group cursor-pointer"
               aria-label="Cerrar modal"
             >
-              <X className="w-5 h-5 group-hover:rotate-90 transition-transform duration-500" />
+              <X className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-90 transition-transform duration-500" />
             </button>
 
             {/* Header Section */}
-            <div className="p-8 md:p-12 pb-8 relative shrink-0">
+            <div className="p-5 md:p-12 pb-4 md:pb-8 relative shrink-0">
               <motion.div variants={itemVariants} className="relative z-10">
-                <div className="flex flex-wrap items-center gap-3 mb-8">
-                  <Badge variant={getTypeVariant(project.type)} icon={getTypeIcon(project.type)}>
+                <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4 md:mb-8">
+                  <Badge variant={getTypeVariant(project.type)} icon={getTypeIcon(project.type)} className="text-[10px] md:text-micro">
                     {getTypeLabel(project.type)}
                   </Badge>
-                  <Badge variant="ghost" icon={<Calendar className="w-3.5 h-3.5" />}>
+                  <Badge variant="ghost" icon={<Calendar className="w-3.5 h-3.5" />} className="text-[10px] md:text-micro">
                     {project.year}
                   </Badge>
                 </div>
 
-                <h2 id="modal-title" className="text-h1 font-bold text-white mb-4 tracking-tighter leading-none">
+                <h2 id="modal-title" className="text-h3 md:text-h1 font-bold text-white mb-2 md:mb-4 tracking-tighter leading-tight md:leading-none">
                   {project.title}
                 </h2>
-                <div className="flex items-center gap-4">
-                  <div className="h-px w-12 bg-brand-primary/40" />
-                  <p className="text-body-lg text-text-muted font-medium tracking-wide">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="h-px w-8 md:w-12 bg-brand-primary/40" />
+                  <p className="text-body-sm md:text-body-lg text-text-muted font-medium tracking-wide">
                     {project.subtitle}
                   </p>
                 </div>
@@ -178,7 +178,7 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
             </div>
 
             {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto p-8 md:p-12 pt-0 custom-scrollbar relative">
+            <div className="flex-1 overflow-y-auto p-5 md:p-12 pt-0 custom-scrollbar relative">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 {/* Left Column */}
                 <div className="lg:col-span-7 space-y-12">
@@ -288,18 +288,18 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
             {/* Footer Actions */}
             <motion.div 
               variants={itemVariants}
-              className="p-8 md:p-10 border-t border-border-subtle bg-slate-950 shrink-0 flex flex-col sm:flex-row items-center justify-between gap-6"
+              className="p-5 md:p-10 border-t border-border-subtle bg-slate-950 shrink-0 flex flex-col sm:flex-row items-center justify-between gap-4 md:gap-6"
             >
-              <div className="flex items-center gap-4 w-full sm:w-auto">
+              <div className="flex items-center gap-3 md:gap-4 w-full sm:w-auto">
                 {project.githubUrl !== "#" && (
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-border-subtle rounded-2xl text-white text-micro font-bold transition-all duration-300 group/btn focus-visible:outline-2 focus-visible:outline-brand-primary"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 md:gap-3 px-5 md:px-8 py-3 md:py-4 bg-white/5 hover:bg-white/10 border border-border-subtle rounded-xl md:rounded-2xl text-white text-[10px] md:text-micro font-bold transition-all duration-300 group/btn focus-visible:outline-2 focus-visible:outline-brand-primary"
                   >
-                    <GithubIcon className="w-4 h-4 text-text-muted group-hover/btn:text-white transition-colors" />
-                    CÓDIGO FUENTE
+                    <GithubIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-text-muted group-hover/btn:text-white transition-colors" />
+                    CÓDIGO
                   </a>
                 )}
                 {project.liveUrl !== "#" && (
@@ -307,20 +307,20 @@ const ProjectDetailsModal = ({ project, isOpen, onClose }: ProjectDetailsModalPr
                     href={project.liveUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none flex items-center justify-center gap-3 px-8 py-4 bg-brand-primary hover:bg-brand-primary/80 text-white rounded-2xl text-micro font-bold transition-all duration-300 shadow-xl shadow-brand-primary/20 active:scale-95 group/live focus-visible:outline-2 focus-visible:outline-white"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 md:gap-3 px-5 md:px-8 py-3 md:py-4 bg-brand-primary hover:bg-brand-primary/80 text-white rounded-xl md:rounded-2xl text-[10px] md:text-micro font-bold transition-all duration-300 shadow-xl shadow-brand-primary/20 active:scale-95 group/live focus-visible:outline-2 focus-visible:outline-white"
                   >
-                    <Globe className="w-4 h-4 group-hover/live:rotate-12 transition-transform" />
-                    DEMO EN VIVO
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover/live:translate-x-1 transition-transform" />
+                    <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover/live:rotate-12 transition-transform" />
+                    DEMO
+                    <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 ml-1 group-hover/live:translate-x-1 transition-transform" />
                   </a>
                 )}
               </div>
               
               <button
                 onClick={onClose}
-                className="w-full sm:w-auto px-8 py-4 text-text-muted/60 hover:text-white text-micro font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
+                className="w-full sm:w-auto px-4 py-2 md:px-8 md:py-4 text-text-muted/60 hover:text-white text-[10px] md:text-micro font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
               >
-                CERRAR SISTEMA
+                CERRAR
               </button>
             </motion.div>
           </motion.div>
