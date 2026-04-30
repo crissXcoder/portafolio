@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Check, Globe, Database, Sparkles, MessageCircle, Layers } from "lucide-react";
+import { portfolioData } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { cn } from "@/lib/utils";
@@ -113,13 +114,14 @@ const CapabilityFramework = () => {
                 ))}
               </ul>
 
-              <button 
+              <a 
+                href={`mailto:${portfolioData.profile.email}?subject=Interés en proyecto de ${item.title}`}
                 className="w-full group/btn relative py-4 px-6 rounded-xl bg-white/5 border border-border-subtle text-white font-bold text-micro uppercase tracking-[0.2em] transition-all duration-300 hover:bg-brand-primary/10 hover:border-brand-primary/30 flex items-center justify-center gap-3 overflow-hidden cursor-pointer"
                 aria-label={`Conversar sobre un proyecto de ${item.title}`}
               >
                 <span className="relative z-10">Conectar Proyecto</span>
                 <MessageCircle className="w-4 h-4 relative z-10 opacity-60 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
-              </button>
+              </a>
             </GlassCard>
           );
         })}

@@ -37,31 +37,36 @@ const Projects = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-secondary/5 rounded-full blur-[128px] translate-y-1/2" />
 
       <Container>
-        <SectionHeader 
-          eyebrow="Selección de Trabajos"
-          title="Proyectos"
-          highlight="Destacados"
-          description="Una visión honesta de mi trayectoria técnica: desde sistemas institucionales de alto impacto hasta exploraciones académicas y de IA."
-        />
-          
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+          <div className="flex-1">
+            <SectionHeader 
+              eyebrow="Selección de Trabajos"
+              title="Proyectos"
+              highlight="Destacados"
+              description="Una visión honesta de mi trayectoria técnica: desde sistemas institucionales de alto impacto hasta exploraciones académicas y de IA."
+              className="mb-0"
+            />
+          </div>
+            
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
             <a 
-              href={portfolioData.socialLinks.find((s) => s.platform === 'github')?.url || "#"} 
+              href="https://github.com/crissXcoder?tab=repositories" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-border-subtle rounded-full text-white font-bold transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary focus-visible:outline-offset-2"
+              className="group relative flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-border-subtle rounded-full text-white font-bold transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary focus-visible:outline-offset-2 shadow-sm"
               aria-label="Ver todos los repositorios en GitHub"
             >
               <GithubIcon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" aria-hidden="true" />
-              Ver Repositorio Completo
+              <span>Ver Todos los Repositorios</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
             </a>
           </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.projects.map((project: Project, index: number) => (

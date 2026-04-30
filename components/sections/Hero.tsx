@@ -203,7 +203,7 @@ export function Hero() {
               className="flex flex-wrap gap-4 pt-4 items-center"
             >
               <a
-                href="#projects"
+                href="#proyectos"
                 className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-primary text-white font-bold overflow-hidden transition-all hover:scale-[1.02] active:scale-95 focus-visible:outline-2 focus-visible:outline-brand-primary focus-visible:outline-offset-4"
                 aria-label="Ver mis proyectos"
               >
