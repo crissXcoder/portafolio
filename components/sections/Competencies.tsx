@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { SectionShell } from "@/components/ui/SectionShell";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { portfolioData, type ContributionArea } from "@/data/portfolio";
 import { 
   Layout, 
@@ -56,22 +57,13 @@ const Competencies = () => {
         gridOpacity={0.03}
         background="transparent"
       >
-        <header className="mb-16 flex flex-col gap-6 border-b border-border-subtle pb-10 transition-all duration-700 md:flex-row md:items-end md:justify-between">
-          <div className="flex flex-col gap-2">
-            <span className="text-micro text-brand-primary">
-              [ CORE COMPETENCIES ]
-            </span>
-            <h2 className="text-h2 text-white">
-              Competencias Técnicas
-            </h2>
-          </div>
-          <div className="flex flex-col items-start gap-4 md:items-end text-right">
-            <p className="max-w-sm text-body-sm text-text-muted md:text-body">
-              Especialización en ingeniería de software con enfoque en escalabilidad, 
-              experiencia de usuario y automatización inteligente.
-            </p>
-          </div>
-        </header>
+        <SectionHeader 
+          eyebrow="Core Competencies"
+          title="Competencias"
+          highlight="Técnicas"
+          description="Especialización en ingeniería de software con enfoque en escalabilidad, experiencia de usuario y automatización inteligente."
+          icon={<Layout className="w-3 h-3" />}
+        />
 
         <div className={cn(
           "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000",

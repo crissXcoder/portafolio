@@ -6,6 +6,7 @@ import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Container } from "@/components/ui/Container";
 import { portfolioData } from "@/data/portfolio";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -20,16 +21,14 @@ const Footer = () => {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           <div>
-            <h2 className="text-micro text-brand-primary mb-4">
-              [ CONTACTO ]
-            </h2>
-            <h3 className="text-h2 text-white mb-6">
-              Hablemos de tu próximo proyecto.
-            </h3>
-            <p className="text-text-muted text-body mb-8 max-w-md">
-              Disponible para colaboraciones, desarrollo de software y oportunidades en ciencia de datos e IA aplicada.
-            </p>
-            <div className="flex flex-col gap-4">
+            <SectionHeader 
+              eyebrow="Contacto"
+              title="Hablemos de tu próximo"
+              highlight="proyecto."
+              description="Disponible para colaboraciones, desarrollo de software y oportunidades en ciencia de datos e IA aplicada."
+              className="mb-8"
+            />
+            <div className="flex flex-col gap-4 -mt-4">
               <a 
                 href={`mailto:${portfolioData.profile.email}`}
                 className="flex items-center gap-4 text-white hover:text-brand-primary transition-colors group focus-visible:outline-2 focus-visible:outline-brand-primary focus-visible:outline-offset-4"

@@ -134,7 +134,7 @@ export function Hero() {
                 <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></div>
                 <div className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></div>
               </div>
-              <span className="text-micro font-bold text-emerald-400 uppercase tracking-widest font-mono">
+              <span className="text-micro font-bold text-emerald-400 uppercase tracking-[0.3em] font-mono">
                 {portfolioData.education[0].status}
               </span>
             </motion.div>
@@ -144,7 +144,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-slate-400 text-h3 font-medium"
+                className="text-slate-400 text-h3 font-semibold"
               >
                 {portfolioData.profile.name}
               </motion.h2>
@@ -157,7 +157,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-h1 font-sans font-bold tracking-tighter text-white leading-tight"
+                    className="text-h2 md:text-h1 font-sans font-bold tracking-tighter text-white leading-tight"
                   >
                     {portfolioData.hero.rotatingTitles[index].split(' ').map((word: string, i: number) => (
                       <span key={i} className={i === 0 ? "text-brand-primary" : ""}>{word} </span>
@@ -171,7 +171,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-body-lg text-slate-400 max-w-xl leading-relaxed font-light"
+              className="text-body-lg text-slate-400 max-w-xl leading-relaxed"
             >
               {portfolioData.profile.description}
             </motion.p>

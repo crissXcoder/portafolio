@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { portfolioData } from "@/data/portfolio";
 import { Terminal } from "lucide-react";
 
@@ -17,13 +18,13 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-micro font-mono text-brand-primary tracking-[0.3em] uppercase mb-4 font-bold">
-              [ PERFIL ]
-            </h2>
-            <h3 className="text-h2 font-bold text-white tracking-tight mb-6">
-              Sobre mí
-            </h3>
-            <div className="space-y-6 text-slate-400 text-body-lg leading-relaxed">
+            <SectionHeader 
+              eyebrow="Perfil Profesional"
+              title="Sobre"
+              highlight="mí"
+              icon={<Terminal className="w-3 h-3" />}
+            />
+            <div className="space-y-6 text-slate-400 text-body-lg leading-relaxed -mt-8">
               <p>
                 {portfolioData.profile.description}
               </p>

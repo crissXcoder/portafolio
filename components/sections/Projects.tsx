@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { portfolioData, type Project } from "@/data/portfolio";
 import ProjectDetailsModal from "@/components/ui/ProjectDetailsModal";
 
@@ -36,38 +37,12 @@ const Projects = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-secondary/5 rounded-full blur-[128px] translate-y-1/2" />
 
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-4"
-            >
-              <div className="h-px w-8 bg-brand-primary" />
-              <span className="text-micro font-mono text-brand-primary tracking-[0.3em] uppercase font-bold">
-                Selección de Trabajos
-              </span>
-            </motion.div>
-            <motion.h3 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-h1 font-sans font-bold text-white tracking-tight leading-tight"
-            >
-              Proyectos <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-brand-secondary font-serif italic">Destacados</span>
-            </motion.h3>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="mt-6 text-text-muted text-body-lg leading-relaxed"
-            >
-              Una visión honesta de mi trayectoria técnica: desde sistemas institucionales de alto impacto hasta exploraciones académicas y de IA.
-            </motion.p>
-          </div>
+        <SectionHeader 
+          eyebrow="Selección de Trabajos"
+          title="Proyectos"
+          highlight="Destacados"
+          description="Una visión honesta de mi trayectoria técnica: desde sistemas institucionales de alto impacto hasta exploraciones académicas y de IA."
+        />
           
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -87,7 +62,6 @@ const Projects = () => {
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
             </a>
           </motion.div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioData.projects.map((project: Project, index: number) => (

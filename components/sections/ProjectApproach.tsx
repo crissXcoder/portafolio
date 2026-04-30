@@ -104,7 +104,7 @@ const ProjectApproach = () => {
                      style={{ color: item.color }}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-mono font-bold text-text-muted/40 uppercase tracking-widest">
+                <span className="text-micro font-mono font-bold text-text-muted/40 uppercase tracking-widest">
                   Principio {item.id}
                 </span>
               </div>
@@ -114,7 +114,7 @@ const ProjectApproach = () => {
                   <h4 className="text-h3 font-bold text-white mb-1 tracking-tight">
                     {item.title}
                   </h4>
-                  <span className="text-[10px] font-mono font-bold text-brand-primary/70 uppercase tracking-[0.2em]">
+                  <span className="text-micro font-mono font-bold text-brand-primary/70 uppercase tracking-[0.2em]">
                     {item.subtitle}
                   </span>
                 </div>

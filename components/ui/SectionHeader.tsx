@@ -34,7 +34,7 @@ const SectionHeader = ({
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         viewport={{ once: true }}
         className={cn(
-          "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-micro font-mono tracking-[0.3em] uppercase mb-6 shadow-[0_0_15px_rgba(99,102,241,0.1)]",
+          "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-micro font-bold font-mono tracking-[0.3em] uppercase mb-6 shadow-[0_0_15px_rgba(99,102,241,0.1)] backdrop-blur-sm",
           align === "center" && "mx-auto"
         )}
       >
@@ -51,7 +51,7 @@ const SectionHeader = ({
       >
         {title}{" "}
         {highlight && (
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary via-brand-accent to-brand-secondary font-serif italic font-medium">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary via-brand-accent to-brand-secondary">
             {highlight}
           </span>
         )}
@@ -63,7 +63,7 @@ const SectionHeader = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-6 text-text-muted text-body-lg leading-relaxed text-balance"
+          className="mt-6 text-slate-400 text-body-lg leading-relaxed text-balance"
         >
           {description}
         </motion.p>

@@ -92,7 +92,7 @@ const WorkApproach = () => {
               <div className="mb-6">
                 <h4 className="text-h3 font-bold text-white mb-2 leading-tight">
                   {item.title}{" "}
-                  <span className="text-brand-primary font-serif italic font-medium">{item.highlight}</span>
+                  <span className="text-brand-primary font-medium">{item.highlight}</span>
                 </h4>
                 <p className="text-text-muted text-body-sm leading-relaxed">
                   {item.description}
