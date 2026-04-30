@@ -16,7 +16,7 @@ import { portfolioData, type Education, type Certification } from "@/data/portfo
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="py-32 bg-slate-950 relative overflow-hidden">
+    <section id="formacion" className="py-32 bg-slate-950 relative overflow-hidden">
       {/* Visual Background Elements */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -74,7 +74,7 @@ const Certifications = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                           </span>
-                          <span className="text-[9px] text-emerald-400 font-mono tracking-tighter uppercase font-bold">In-Progress</span>
+                          <span className="text-[9px] text-emerald-400 font-mono tracking-tighter uppercase font-bold">En curso</span>
                         </div>
                       )}
                     </div>

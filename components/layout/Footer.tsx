@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="py-24 bg-slate-950 border-t border-white/5 relative overflow-hidden">
+    <footer id="contacto" className="py-24 bg-slate-950 border-t border-white/5 relative overflow-hidden">
       {/* Decorative Grid background (localized) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] opacity-20 pointer-events-none" />
 
@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-sm font-mono text-indigo-400 tracking-[0.3em] uppercase mb-4">
-              [ CONTACT ]
+              [ CONTACTO ]
             </h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
               Hablemos de tu próximo proyecto.

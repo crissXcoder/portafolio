@@ -21,7 +21,7 @@ import { portfolioData, type Project } from "@/data/portfolio";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 bg-slate-950 relative overflow-hidden">
+    <section id="proyectos" className="py-32 bg-slate-950 relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-[128px] -translate-y-1/2" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[128px] translate-y-1/2" />
@@ -103,6 +103,16 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     }
   };
 
+  const getTypeLabel = (type: string) => {
+    switch (type.toLowerCase()) {
+      case "institutional": return "Institucional";
+      case "academic": return "Académico";
+      case "professional": return "Profesional";
+      case "personal": return "Personal";
+      default: return type;
+    }
+  };
+
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
       case "institutional": return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
@@ -130,7 +140,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="p-6 pb-0 flex justify-between items-start relative z-10">
         <div className={`flex items-center gap-2 px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-wider ${getTypeColor(project.type)}`}>
           {getTypeIcon(project.type)}
-          {project.type}
+          {getTypeLabel(project.type)}
         </div>
         <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
           {project.year}

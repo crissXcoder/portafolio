@@ -55,9 +55,9 @@ function TechnicalCard() {
           <div className="p-4 rounded-2xl bg-indigo-500/5 border border-indigo-500/10">
             <div className="flex items-center gap-3 mb-2">
               <Terminal className="w-4 h-4 text-indigo-400" />
-              <span className="text-xs font-mono text-indigo-300">currently_building</span>
+              <span className="text-xs font-mono text-indigo-300">desarrollo_actual</span>
             </div>
-            <div className="text-sm font-medium text-white">SIGADI-RC / Enterprise Solution</div>
+            <div className="text-sm font-medium text-white">SIGADI-RC / Sistema Institucional</div>
             <div className="mt-2 w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
               <motion.div 
                 initial={{ width: 0 }}
@@ -71,8 +71,8 @@ function TechnicalCard() {
           {/* Metrics Grid */}
           <div className="grid grid-cols-2 gap-3">
             {[
-              { label: "Level", val: "4th Year", icon: GraduationCap, color: "text-emerald-400" },
-              { label: "Focus", val: "Full Stack", icon: Code2, color: "text-blue-400" },
+              { label: "Nivel", val: "4.to Año", icon: GraduationCap, color: "text-emerald-400" },
+              { label: "Enfoque", val: "Full Stack", icon: Code2, color: "text-blue-400" },
             ].map((item: { label: string; val: string; icon: LucideIcon; color: string }, i: number) => (
               <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <item.icon className={`w-4 h-4 ${item.color} mb-2`} />
@@ -86,7 +86,7 @@ function TechnicalCard() {
           <div className="space-y-2">
             <div className="text-[10px] text-slate-500 uppercase font-mono mb-2 flex items-center gap-2">
               <Award className="w-3 h-3" />
-              Verified Credentials
+              Credenciales Verificadas
             </div>
             {portfolioData.certifications.slice(0, 2).map((cert: any, i: number) => (
               <div key={i} className="flex items-center gap-3 text-xs text-slate-400 bg-white/2 p-2 rounded-lg border border-white/5">

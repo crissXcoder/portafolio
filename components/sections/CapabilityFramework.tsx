@@ -53,7 +53,7 @@ const capabilities = [
 
 const CapabilityFramework = () => {
   return (
-    <section id="capabilities" className="py-32 bg-slate-950 relative overflow-hidden">
+    <section id="aportes" className="py-32 bg-slate-950 relative overflow-hidden">
       {/* Subtle background glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
 

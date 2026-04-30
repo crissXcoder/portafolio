@@ -176,7 +176,7 @@ export const portfolioData: PortfolioData = {
         "Panel administrativo con control de accesos",
         "Digitalización total de procesos comunitarios"
       ],
-      githubUrl: "https://github.com/crissXcoder/canasysFronEnd",
+      githubUrl: "https://github.com/crissXcoder/canasysFrontEnd",
       liveUrl: "https://sigadi-rc.org/",
     },
     {

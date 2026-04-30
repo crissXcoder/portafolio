@@ -48,7 +48,7 @@ const Competencies = () => {
   };
 
   return (
-    <section id="competencies" className="relative py-24 overflow-hidden" ref={sectionRef}>
+    <section id="competencias" className="relative py-24 overflow-hidden" ref={sectionRef}>
       {/* Background Decorative Element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
 
