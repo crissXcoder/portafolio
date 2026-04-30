@@ -24,19 +24,24 @@ export interface HeroData {
 }
 
 export interface Education {
+  id: string;
   degree: string;
   institution: string;
   period: string;
   status: string;
+  description: string;
   highlights: string[];
+  color?: string; // Brand color for the institution
 }
 
 export interface Certification {
+  id: string;
   title: string;
   issuer: string;
   year: string;
   description: string;
   url: string;
+  color?: string; // Brand color for the issuer
 }
 
 export type ProjectType = 'Professional' | 'Academic' | 'Personal' | 'Institutional';
@@ -116,136 +121,143 @@ export const portfolioData: PortfolioData = {
 
   education: [
     {
+      id: "una-ingenieria",
       degree: "Ingeniería en Sistemas de Comunicación",
       institution: "Universidad Nacional de Costa Rica (UNA)",
-      period: "2023 — Presente",
-      status: "Actualmente cursando 4.º y último año",
-      highlights: [
-        "Enfoque en desarrollo de software y telemática",
-        "Diplomado en Programación de Aplicaciones Informáticas (2025)"
-      ],
+      period: "2023 — Actualidad",
+      status: "Cursando 4.º año",
+      description: "Formación integral en infraestructura de red, seguridad informática y sistemas distribuidos. Especializado en el desarrollo de soluciones de software escalables y eficientes.",
+      highlights: ["Último año de carrera", "Énfasis en desarrollo web y telemática", "Gestión de proyectos tecnológicos"],
+      color: "#0066cc"
+    },
+    {
+      id: "una-diplomado",
+      degree: "Diplomado en Programación de Aplicaciones Informáticas",
+      institution: "Universidad Nacional de Costa Rica (UNA)",
+      period: "2023 — 2025",
+      status: "Completado",
+      description: "Base técnica sólida en fundamentos de programación, estructuras de datos, bases de datos relacionales y desarrollo de aplicaciones web multiplataforma.",
+      highlights: ["Título intermedio obtenido", "Programación orientada a objetos", "Modelado de datos"],
+      color: "#cc0000"
     }
   ],
-
   certifications: [
     {
+      id: "scrum-fundamentals",
       title: "Scrum Fundamentals Certified",
       issuer: "SCRUMstudy",
       year: "2025",
-      description: "Validación de conocimientos en metodologías ágiles y gestión de proyectos bajo el framework Scrum.",
+      description: "Certificación en fundamentos de Scrum, gestión de sprints, roles y artefactos del framework para el desarrollo ágil de proyectos.",
       url: "https://www.scrumstudy.com/certification/scrum-fundamentals-certified",
+      color: "#6366f1"
     },
     {
+      id: "cisco-data-science",
       title: "Introducción a la Ciencia de Datos",
       issuer: "Cisco Networking Academy",
       year: "2024",
-      description: "Fundamentos de análisis de datos, visualización y toma de decisiones basada en información.",
+      description: "Formación introductoria en conceptos básicos de ciencia de datos, análisis exploratorio, recopilación de información y fundamentos de visualización.",
       url: "#",
+      color: "#00b4d8"
     }
   ],
 
   projects: [
     {
       title: "SIGADI-RC",
-      subtitle: "Sistema de Gestión Administrativa",
-      description: "Plataforma integral para la Asociación de Desarrollo Integral de Río Cañas, automatizando el control de membresías y finanzas comunitarias.",
+      subtitle: "ADI Río Cañas",
+      description: "Plataforma institucional integral con sitio público y panel administrativo. Gestiona membresías, solicitudes, eventos, noticias, proyectos y sesiones con autenticación segura.",
       year: "2024",
       type: "Institutional",
       tags: ["Full-stack", "Fintech Local", "Social Impact"],
       technologies: ["NestJS", "React", "PostgreSQL", "TailwindCSS"],
       highlights: [
-        "Digitalización del 100% de los procesos administrativos manuales",
-        "Generación automatizada de reportes financieros",
-        "Gestión de usuarios y roles con alta seguridad"
+        "Módulos de afiliados, eventos y finanzas",
+        "Panel administrativo con control de accesos",
+        "Digitalización total de procesos comunitarios"
       ],
       githubUrl: "https://github.com/crisalmont/sigadi-rc",
       liveUrl: "#",
-      imageUrl: "/projects/sigadi.jpg"
     },
     {
       title: "Water-sf",
-      subtitle: "Gestión Hídrica Inteligente",
-      description: "Sistema especializado para la ASADA San Fernando de Sámara, optimizando la facturación y el monitoreo de infraestructura hídrica.",
+      subtitle: "ASADA San Fernando de Sámara",
+      description: "Sitio institucional especializado en gestión hídrica y comunicación pública. Optimizado para alto rendimiento, SEO e indexación en buscadores.",
       year: "2024",
       type: "Institutional",
-      tags: ["Infrastructure", "Monitoring", "Automation"],
-      technologies: ["Next.js", "TypeScript", "Zustand", "PostgreSQL", "TanStack Table"],
+      tags: ["SEO", "Performance", "Public Sector"],
+      technologies: ["Next.js", "TypeScript", "Zustand", "PostgreSQL"],
       highlights: [
-        "Módulo de facturación masiva con validación técnica",
-        "Dashboard interactivo para monitoreo de consumo",
-        "Arquitectura escalable para múltiples comunidades"
+        "Enfoque en comunicación y transparencia",
+        "Optimización avanzada de rendimiento",
+        "Indexación estructurada para servicios públicos"
       ],
       githubUrl: "https://github.com/crisalmont/water-sf",
       liveUrl: "#",
-      imageUrl: "/projects/watersf.jpg"
     },
     {
       title: "AstroAssist AI",
-      subtitle: "Asistente Técnico Inteligente",
-      description: "Agente de inteligencia artificial diseñado para asistir en la resolución de problemas de programación y consulta de documentación técnica.",
+      subtitle: "E-commerce con IA",
+      description: "Frontend e-commerce temático con asistencia técnica inteligente. Incluye catálogo dinámico, carrito de compras y un flujo de checkout visual modular.",
       year: "2024",
       type: "Personal",
-      tags: ["AI", "LLM", "Developer Tools"],
+      tags: ["AI", "E-commerce", "UX Design"],
       technologies: ["Next.js", "OpenAI API", "Vercel AI SDK", "TailwindCSS"],
       highlights: [
-        "Integración de modelos GPT para respuestas contextuales",
-        "Interfaz minimalista y optimizada para desarrolladores",
-        "Capacidad de análisis de fragmentos de código"
+        "Asistente inteligente para resolución técnica",
+        "Checkout visual con estructura modular",
+        "Interfaz inmersiva con temática espacial"
       ],
       githubUrl: "https://github.com/crisalmont/astroassist",
       liveUrl: "#",
-      imageUrl: "/projects/astroassist.jpg"
     },
     {
       title: "AutoStock Pro S.A.",
-      subtitle: "Control de Inventarios Automotrices",
-      description: "Sistema robusto de gestión de inventarios para repuestos automotrices, con integración de facturación y alertas de stock.",
+      subtitle: "Gestión Empresarial",
+      description: "Sistema robusto para el control de inventarios, repuestos y ventas. Incluye módulos de auditoría, gestión de proveedores y reportes detallados.",
       year: "2024",
-      type: "Academic",
-      tags: ["Inventory", "B2B", "Enterprise"],
-      technologies: ["React", "Node.js", "SQL Server", "TanStack Query", "Dapper"],
+      type: "Professional",
+      tags: ["Enterprise", "Inventory", "Auditing"],
+      technologies: ["React", "Node.js", "SQL Server", "Dapper"],
       highlights: [
-        "Optimización de consultas SQL complejas para reportes",
-        "Manejo de estados globales con TanStack",
-        "Sistema de alertas preventivas de desabastecimiento"
+        "Control exhaustivo de stock y ventas",
+        "Sistema de auditoría de movimientos",
+        "Generación de reportes empresariales"
       ],
-      githubUrl: "#", // TODO: Añadir repo
+      githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "/projects/autostock.jpg"
     },
     {
       title: "DataScienceHub",
-      subtitle: "Laboratorio de Visualización de Datos",
-      description: "Plataforma interactiva para el análisis y exploración de datasets complejos mediante herramientas modernas de ciencia de datos.",
+      subtitle: "Modelado SQL Server",
+      description: "Proyecto académico enfocado en modelado relacional complejo, carga masiva de datos JSON, optimización de consultas y vistas de auditoría.",
       year: "2024",
       type: "Academic",
-      tags: ["Data Science", "Analytics", "Education"],
-      technologies: ["Python", "Streamlit", "Pandas", "Plotly"],
+      tags: ["Data Science", "Databases", "SQL"],
+      technologies: ["SQL Server", "T-SQL", "Python", "Pandas"],
       highlights: [
-        "Visualizaciones interactivas en tiempo real",
-        "Limpieza y procesamiento automatizado de datos",
-        "Documentación integrada de hallazgos estadísticos"
+        "Diseño relacional de alta complejidad",
+        "Procesamiento y carga de archivos JSON",
+        "Implementación de triggers y vistas de auditoría"
       ],
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "/projects/datascience.jpg"
     },
     {
       title: "TalentLink",
-      subtitle: "Plataforma de Conexión Estudiantil",
-      description: "Ecosistema digital diseñado para conectar el talento universitario con oportunidades de pasantías y primer empleo técnico.",
+      subtitle: "Dataset & SQL Analytics",
+      description: "Plataforma de base de datos para la gestión de empleos. Aplicación de modelado relacional sobre datasets reales y consultas analíticas de alto nivel.",
       year: "2024",
       type: "Academic",
-      tags: ["UX/UI", "Job Board", "Education"],
-      technologies: ["React Native", "Firebase", "TailwindCSS", "Expo"],
+      tags: ["SQL", "Analytics", "Dataset Management"],
+      technologies: ["React Native", "Firebase", "SQL Server", "Expo"],
       highlights: [
-        "Diseño mobile-first centrado en la experiencia del usuario",
-        "Sistema de autenticación y perfiles dinámicos",
-        "Filtros de búsqueda avanzados por competencias"
+        "Modelado de datos para mercados laborales",
+        "Transformación de datasets heterogéneos",
+        "Consultas SQL optimizadas para análisis"
       ],
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "/projects/talentlink.jpg"
     }
   ],
 
@@ -292,34 +304,34 @@ export const portfolioData: PortfolioData = {
 
   contributionAreas: [
     {
-      title: "Desarrollo Web Full-stack",
-      description: "Creación de aplicaciones web dinámicas y responsivas, optimizadas para el rendimiento y la experiencia del usuario.",
-      keyTechs: ["Next.js & React", "TypeScript", "Tailwind CSS"]
+      title: "Desarrollo Frontend",
+      description: "Experiencia práctica en la construcción de interfaces modernas, reactivas y altamente interactivas, priorizando el rendimiento.",
+      keyTechs: ["Next.js & React", "TypeScript", "Tailwind CSS", "Framer Motion"]
     },
     {
-      title: "Arquitectura de Datos",
-      description: "Diseño de esquemas eficientes, migraciones de datos y optimización de consultas complejas.",
-      keyTechs: ["PostgreSQL", "MySQL", "TypeORM"]
+      title: "Desarrollo Backend",
+      description: "Construcción de lógica de negocio robusta y APIs escalables bajo arquitecturas limpias y patrones de diseño modernos.",
+      keyTechs: ["NestJS", "Node.js", "ASP.NET Core", "RESTful APIs"]
     },
     {
-      title: "IA & Automatización",
-      description: "Implementación de lógica inteligente y automatización de flujos de trabajo mediante la integración de APIs de IA.",
-      keyTechs: ["OpenAI API", "Vercel AI SDK", "Python"]
+      title: "Bases de Datos",
+      description: "Conocimientos aplicados en el modelado relacional, optimización de consultas complejas y gestión de integridad de datos.",
+      keyTechs: ["PostgreSQL", "SQL Server", "MySQL", "TypeORM / Dapper"]
     },
     {
-      title: "Sistemas Backend",
-      description: "Construcción de APIs robustas y seguras, siguiendo principios de Clean Architecture.",
-      keyTechs: ["NestJS", "Node.js", "API Design"]
+      title: "Análisis y Arquitectura",
+      description: "Familiaridad con la estructuración de sistemas complejos, documentación técnica y metodologías de desarrollo ágil.",
+      keyTechs: ["Clean Architecture", "Scrum", "UML", "System Design"]
     },
     {
-      title: "UI/UX Engineering",
-      description: "Traducción de diseños complejos a componentes funcionales, priorizando la accesibilidad.",
-      keyTechs: ["Framer Motion", "Shadcn/ui", "Responsive Design"]
+      title: "UI/UX Aplicado",
+      description: "Aplicación de principios de usabilidad y diseño centrado en el usuario para crear experiencias digitales intuitivas y accesibles.",
+      keyTechs: ["Responsive Design", "Accesibilidad", "Prototipado", "Figma Design"]
     },
     {
-      title: "Sistemas Móviles",
-      description: "Desarrollo de interfaces móviles eficientes y comunicación fluida con servicios backend.",
-      keyTechs: ["React Native", "Expo", "Mobile UI"]
+      title: "Datos e IA Aplicada",
+      description: "Interés e implementación de soluciones basadas en datos y agentes de inteligencia artificial para la automatización de procesos.",
+      keyTechs: ["OpenAI API", "Vercel AI SDK", "Python", "Data Analysis"]
     }
   ],
 
