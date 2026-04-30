@@ -286,19 +286,34 @@ export const portfolioData: PortfolioData = {
 
   workPrinciples: [
     {
-      title: "Mantenibilidad",
-      description: "Escribo código pensando en quien lo leerá mañana, priorizando la legibilidad y la estructura.",
-      highlight: "Clean Code"
+      title: "Análisis Predictivo",
+      description: "Entiendo el problema en su totalidad antes de escribir la primera línea de código. Analizo la relación entre el modelo de datos y la interfaz.",
+      highlight: "Arquitectura Primero"
     },
     {
-      title: "Eficiencia",
-      description: "El análisis previo y el modelado correcto ahorran horas de refactorización innecesaria.",
-      highlight: "Análisis Primero"
+      title: "Organización Modular",
+      description: "Sistemas construidos por módulos independientes y reutilizables. Facilito el escalado y la mantenibilidad del software a largo plazo.",
+      highlight: "Estructura Atómica"
     },
     {
-      title: "Adaptabilidad",
-      description: "Aprendizaje continuo para dominar las herramientas que mejor resuelven el problema actual.",
-      highlight: "Evolución Constante"
+      title: "Validación & Seguridad",
+      description: "La integridad de los datos es innegociable. Implemento validaciones estrictas y capas de seguridad en cada punto de entrada.",
+      highlight: "Data Integrity"
+    },
+    {
+      title: "Experiencia de Usuario",
+      description: "No solo construyo funciones; diseño flujos. El software debe ser intuitivo, rápido y accesible para cualquier perfil de usuario.",
+      highlight: "UX Focused"
+    },
+    {
+      title: "Mejora Continua",
+      description: "Refactorización constante y adopción de nuevas tecnologías. Busco soluciones que no solo funcionen hoy, sino que perduren mañana.",
+      highlight: "Evolución Técnica"
+    },
+    {
+      title: "Documentación & Claridad",
+      description: "Código limpio y autodocumentado. Valoro que el sistema sea fácil de entender para otros desarrolladores y para el cliente.",
+      highlight: "Clean Documentation"
     }
   ],
 

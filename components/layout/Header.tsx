@@ -32,17 +32,17 @@ export function Header() {
       )}
     >
       <Container className="flex items-center justify-between">
-        <a href="#" className="text-xl font-heading font-bold text-white tracking-tighter">
+        <a href="#" className="text-xl font-heading font-bold text-white tracking-tighter" aria-label="Cristhian Altamirano Montes - Inicio">
           CAM<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted hover:text-white transition-colors"
+              className="text-sm font-medium text-muted hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
             >
               {item.name}
             </a>
@@ -51,8 +51,11 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2 text-muted hover:text-white"
+          className="md:hidden p-2 text-muted hover:text-white focus-visible:outline-2 focus-visible:outline-primary"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
@@ -60,13 +63,16 @@ export function Header() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-surface border-b border-border p-4 animate-in slide-in-from-top duration-300">
-          <nav className="flex flex-col gap-4">
+        <div 
+          id="mobile-navigation"
+          className="md:hidden absolute top-full left-0 right-0 bg-surface border-b border-border p-4 animate-in slide-in-from-top duration-300"
+        >
+          <nav className="flex flex-col gap-4" aria-label="Navegación móvil">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium text-muted hover:text-white transition-colors"
+                className="text-lg font-medium text-muted hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-primary"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

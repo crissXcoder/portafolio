@@ -174,10 +174,11 @@ const Certifications = () => {
                           href={cert.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-[10px] font-bold text-white/40 hover:text-indigo-400 transition-colors group/btn"
+                          className="inline-flex items-center gap-2 text-[10px] font-bold text-white/40 hover:text-indigo-400 transition-colors group/btn focus-visible:outline-2 focus-visible:outline-indigo-400 focus-visible:outline-offset-2"
+                          aria-label={`Validar credencial de ${cert.title}`}
                         >
                           VALIDAR CREDENCIAL
-                          <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" />
+                          <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" aria-hidden="true" />
                         </a>
                       ) : (
                         <div className="inline-flex items-center gap-2 text-[10px] font-bold text-slate-700 cursor-not-allowed">

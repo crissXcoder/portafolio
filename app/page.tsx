@@ -2,8 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Competencies } from "@/components/sections/Competencies";
 import { Projects } from "@/components/sections/Projects";
-import { Collaboration } from "@/components/sections/Collaboration";
-import { WorkPrinciples } from "@/components/sections/WorkPrinciples";
+import CapabilityFramework from "@/components/sections/CapabilityFramework";
+import WorkApproach from "@/components/sections/WorkApproach";
 import { Certifications } from "@/components/sections/Certifications";
 import { Footer } from "@/components/layout/Footer";
 
@@ -22,11 +22,11 @@ export default function Home() {
       {/* Projects Gallery */}
       <Projects />
       
-      {/* Collaboration Areas (Services) */}
-      <Collaboration />
+      {/* Áreas de aporte (Pricing-style Capabilities) */}
+      <CapabilityFramework />
       
-      {/* Work Principles (Methodology) */}
-      <WorkPrinciples />
+      {/* Cómo abordo los proyectos (Methodology) */}
+      <WorkApproach />
       
       {/* Certifications & Education */}
       <Certifications />

@@ -69,11 +69,13 @@ const Projects = () => {
             <a 
               href={portfolioData.socialLinks.find((s: any) => s.platform === 'github')?.url || "#"} 
               target="_blank" 
-              className="group relative flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300"
+              rel="noopener noreferrer"
+              className="group relative flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-indigo-400 focus-visible:outline-offset-2"
+              aria-label="Ver todos los repositorios en GitHub"
             >
-              <GithubIcon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
+              <GithubIcon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" aria-hidden="true" />
               Ver Repositorio Completo
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
@@ -185,9 +187,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <a 
               href={project.githubUrl} 
               target="_blank" 
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white text-xs font-semibold transition-all group/btn"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white text-xs font-semibold transition-all group/btn focus-visible:outline-2 focus-visible:outline-indigo-400"
+              aria-label={`Ver código de ${project.title} en GitHub`}
             >
-              <GithubIcon className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-white" />
+              <GithubIcon className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-white" aria-hidden="true" />
               GitHub
             </a>
           ) : (
@@ -200,18 +204,21 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <a 
               href={project.liveUrl} 
               target="_blank" 
-              className="flex items-center justify-center p-2 bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white border border-indigo-500/20 rounded-xl transition-all"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-2 bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white border border-indigo-500/20 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
               title="Ver Demo"
+              aria-label={`Ver demo en vivo de ${project.title}`}
             >
-              <Globe className="w-4 h-4" />
+              <Globe className="w-4 h-4" aria-hidden="true" />
             </a>
           )}
           
           <button 
-            className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all"
+            className="flex items-center justify-center p-2 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
             title="Detalles"
+            aria-label={`Ver detalles de ${project.title}`}
           >
-            <Info className="w-4 h-4" />
+            <Info className="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
       </div>

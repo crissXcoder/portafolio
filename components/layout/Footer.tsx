@@ -32,10 +32,11 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <a 
                 href={`mailto:${portfolioData.profile.email}`}
-                className="flex items-center gap-4 text-white hover:text-indigo-400 transition-colors group"
+                className="flex items-center gap-4 text-white hover:text-indigo-400 transition-colors group focus-visible:outline-2 focus-visible:outline-indigo-400 focus-visible:outline-offset-4"
+                aria-label={`Enviar un correo a ${portfolioData.profile.email}`}
               >
                 <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-all">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <span className="text-xl font-medium tracking-tight truncate">{portfolioData.profile.email}</span>
               </a>
@@ -57,10 +58,12 @@ const Footer = () => {
                     key={i}
                     href={social.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                     title={social.label}
-                    className="h-14 w-14 rounded-2xl border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500 hover:bg-white/5 transition-all duration-300 hover:-translate-y-1"
+                    className="h-14 w-14 rounded-2xl border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500 hover:bg-white/5 transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-indigo-400"
+                    aria-label={social.label}
                   >
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-6 h-6" aria-hidden="true" />
                   </a>
                 );
               })}
@@ -75,11 +78,12 @@ const Footer = () => {
           
           <button 
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group text-xs font-mono uppercase tracking-[0.2em]"
+            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group text-xs font-mono uppercase tracking-[0.2em] focus-visible:outline-2 focus-visible:outline-indigo-400"
+            aria-label="Volver al inicio de la página"
           >
             Volver arriba
             <div className="h-8 w-8 rounded border border-white/10 flex items-center justify-center group-hover:border-indigo-500 transition-all">
-              <ArrowUp className="w-3 h-3" />
+              <ArrowUp className="w-3 h-3" aria-hidden="true" />
             </div>
           </button>
         </div>

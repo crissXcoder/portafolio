@@ -204,11 +204,12 @@ export function Hero() {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-600 text-white font-semibold overflow-hidden transition-all hover:scale-[1.02] active:scale-95"
+                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-600 text-white font-semibold overflow-hidden transition-all hover:scale-[1.02] active:scale-95 focus-visible:outline-2 focus-visible:outline-indigo-400 focus-visible:outline-offset-4"
+                aria-label="Ver mis proyectos"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-indigo-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 Explorar proyectos
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               
               <div className="flex items-center gap-3 p-1 rounded-2xl bg-white/5 border border-white/10">
@@ -225,10 +226,12 @@ export function Hero() {
                       key={i}
                       href={social.url}
                       target="_blank"
-                      className="p-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+                      rel="noopener noreferrer"
+                      className="p-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all focus-visible:outline-2 focus-visible:outline-indigo-400"
+                      aria-label={social.label}
                       title={social.label}
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-5 h-5" aria-hidden="true" />
                     </a>
                   );
                 })}
