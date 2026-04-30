@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Container } from "@/components/ui/Container";
+import { SectionShell } from "@/components/ui/SectionShell";
 import { portfolioData, type ContributionArea } from "@/data/portfolio";
 import { 
   Layout, 
@@ -12,10 +12,11 @@ import {
   BrainCircuit, 
   type LucideIcon 
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Competencies = () => {
   const [sectionVisible, setSectionVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current || typeof window === "undefined") return;
@@ -48,29 +49,34 @@ const Competencies = () => {
   };
 
   return (
-    <section id="competencias" className="relative py-24 overflow-hidden" ref={sectionRef}>
-      {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-
-      <Container>
-        <header className="mb-16 flex flex-col gap-6 border-b border-white/10 pb-10 transition-all duration-700 md:flex-row md:items-end md:justify-between">
+    <div ref={sectionRef as any}>
+      <SectionShell 
+        id="competencias" 
+        showGrid={true}
+        gridOpacity={0.03}
+        background="transparent"
+      >
+        <header className="mb-16 flex flex-col gap-6 border-b border-border-subtle pb-10 transition-all duration-700 md:flex-row md:items-end md:justify-between">
           <div className="flex flex-col gap-2">
-            <span className="text-xs uppercase tracking-[0.35em] text-indigo-400 font-mono">
+            <span className="text-micro text-brand-primary">
               [ CORE COMPETENCIES ]
             </span>
-            <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="text-h2 text-white">
               Competencias Técnicas
             </h2>
           </div>
           <div className="flex flex-col items-start gap-4 md:items-end text-right">
-            <p className="max-w-sm text-sm text-slate-400 md:text-base">
+            <p className="max-w-sm text-body-sm text-text-muted md:text-body">
               Especialización en ingeniería de software con enfoque en escalabilidad, 
               experiencia de usuario y automatización inteligente.
             </p>
           </div>
         </header>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000 ${sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={cn(
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000",
+          sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        )}>
           {portfolioData.contributionAreas.map((area: ContributionArea, index: number) => (
             <SkillCard
               key={area.title}
@@ -83,8 +89,8 @@ const Competencies = () => {
             />
           ))}
         </div>
-      </Container>
-    </section>
+      </SectionShell>
+    </div>
   );
 };
 
@@ -102,7 +108,7 @@ function SkillCard({ title, description, icon: Icon, skills, index, isVisible }:
 
   return (
     <article
-      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-slate-900/30 p-8 transition-all duration-500 hover:border-indigo-500/40 hover:bg-slate-900/50 hover:shadow-2xl hover:shadow-indigo-500/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border-subtle bg-surface-card p-8 transition-all duration-500 hover:border-brand-primary/40 hover:bg-slate-900/50 hover:shadow-2xl hover:shadow-brand-primary/10"
       style={{ 
         transitionDelay: isVisible ? animationDelay : '0ms',
         opacity: isVisible ? 1 : 0,
@@ -110,17 +116,17 @@ function SkillCard({ title, description, icon: Icon, skills, index, isVisible }:
       }}
     >
       {/* Glow Effect on Hover */}
-      <div className="absolute -inset-px bg-linear-to-br from-indigo-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+      <div className="absolute -inset-px bg-linear-to-br from-brand-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
 
       <div className="relative z-10">
-        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-slate-800/50 text-indigo-400 transition-all duration-500 group-hover:scale-110 group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 group-hover:text-white">
+        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-border-subtle bg-slate-800/50 text-brand-primary transition-all duration-500 group-hover:scale-110 group-hover:border-brand-primary/50 group-hover:bg-brand-primary/10 group-hover:text-white">
           <Icon className="h-6 w-6" strokeWidth={1.5} />
         </div>
         
-        <h3 className="text-xl font-semibold tracking-tight text-white mb-3">
+        <h3 className="text-h3 text-white mb-3">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+        <p className="text-body-sm text-text-muted group-hover:text-slate-300 transition-colors duration-300">
           {description}
         </p>
 
@@ -128,7 +134,7 @@ function SkillCard({ title, description, icon: Icon, skills, index, isVisible }:
           {skills.map((skill) => (
             <span 
               key={skill} 
-              className="rounded-lg border border-white/5 bg-white/5 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-slate-400 transition-colors duration-300 group-hover:border-indigo-500/20 group-hover:bg-indigo-500/5 group-hover:text-indigo-300"
+              className="rounded-lg border border-border-subtle bg-white/5 px-2.5 py-1 text-micro text-text-muted transition-colors duration-300 group-hover:border-brand-primary/20 group-hover:bg-brand-primary/5 group-hover:text-brand-primary"
             >
               {skill}
             </span>
@@ -153,3 +159,4 @@ function SkillCard({ title, description, icon: Icon, skills, index, isVisible }:
 
 export { Competencies };
 export default Competencies;
+

@@ -3,115 +3,151 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Brain, 
-  Box, 
-  ShieldCheck, 
-  Users, 
-  RefreshCcw, 
-  FileCode2,
-  ChevronRight
+  Terminal, 
+  Search, 
+  CheckCircle2, 
+  ArrowRight,
+  Code2,
+  Cpu
 } from "lucide-react";
-import { Container } from "@/components/ui/Container";
-import { portfolioData, type WorkPrinciple } from "@/data/portfolio";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Badge } from "@/components/ui/Badge";
+import { SectionShell } from "@/components/ui/SectionShell";
+import { Glow } from "@/components/ui/Glow";
 
-const iconsMap = [
-  Brain,         // Análisis
-  Box,           // Modular
-  ShieldCheck,   // Seguridad
-  Users,         // UX
-  RefreshCcw,    // Mejora
-  FileCode2      // Documentación
+const approaches = [
+  {
+    id: "01",
+    title: "Análisis & Investigación",
+    highlight: "Científico",
+    description: "Cada proyecto comienza con una fase rigurosa de recolección de requisitos y análisis de datos para entender el problema desde su raíz técnica.",
+    icon: <Search className="w-6 h-6" />,
+    color: "var(--color-brand-primary)",
+    steps: ["Auditoría de Sistemas", "Modelado de Datos", "Benchmark Técnico"]
+  },
+  {
+    id: "02",
+    title: "Desarrollo & Optimización",
+    highlight: "Eficiente",
+    description: "Implementación de arquitecturas robustas y escalables, priorizando la legibilidad del código y el rendimiento computacional.",
+    icon: <Terminal className="w-6 h-6" />,
+    color: "var(--color-brand-accent)",
+    steps: ["Clean Code", "Optimización de Latencia", "CI/CD Automático"]
+  },
+  {
+    id: "03",
+    title: "Verificación & Despliegue",
+    highlight: "Resiliente",
+    description: "QA exhaustivo y monitorización continua para asegurar que la solución no solo funcione, sino que evolucione de forma segura.",
+    icon: <CheckCircle2 className="w-6 h-6" />,
+    color: "var(--color-brand-secondary)",
+    steps: ["Testing Unitario/E2E", "Hardening de Seguridad", "Iteración de Producto"]
+  }
 ];
 
 const WorkApproach = () => {
   return (
-    <section id="approach" className="py-32 bg-slate-950 relative overflow-hidden">
-      {/* Visual Background Elements */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <SectionShell 
+      id="metodologia" 
+      showGrid={true}
+      gridOpacity={0.05}
+      containerClassName="relative"
+    >
+      {/* Background Decor */}
+      <Glow variant="secondary" position="center" opacity={0.03} />
+      
+      <SectionHeader 
+        eyebrow="Algoritmo de Trabajo"
+        title="Mi Metodología de"
+        highlight="Ingeniería"
+        description="Abordo el desarrollo de software no solo como una tarea creativa, sino como una disciplina de ingeniería basada en el rigor, la eficiencia y la escalabilidad."
+        align="left"
+        icon={<Cpu className="w-3 h-3" />}
+      />
 
-      <Container className="relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {approaches.map((item, index) => (
+          <GlassCard
+            key={item.id}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-mono tracking-widest uppercase mb-6"
+            transition={{ duration: 0.7, delay: index * 0.15 }}
+            className="group p-8 rounded-3xl border-border-subtle bg-surface-card"
+            glowColor={item.color}
           >
-            Metodología de Ingeniería
-          </motion.div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">
-            Cómo abordo los <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400">proyectos</span>
-          </h2>
-          <p className="text-slate-400 text-lg leading-relaxed">
-            Mi proceso no se basa en la intuición, sino en un sistema de principios técnicos diseñados para garantizar solidez, escalabilidad y una experiencia de usuario excepcional.
-          </p>
-        </div>
+            <div className="relative z-10">
+              {/* Header: ID and Icon */}
+              <div className="flex items-center justify-between mb-12">
+                <span className="text-micro font-mono font-bold text-text-muted/60 group-hover:text-brand-primary transition-colors">
+                  ID_{item.id}
+                </span>
+                <div className="h-14 w-14 rounded-xl bg-white/5 border border-border-subtle flex items-center justify-center text-text-muted group-hover:text-brand-primary group-hover:border-brand-primary/30 transition-all duration-500 shadow-xl"
+                      style={{ color: index === 0 ? 'var(--color-brand-primary)' : index === 1 ? 'var(--color-brand-accent)' : 'var(--color-brand-secondary)' }}>
+                  {item.icon}
+                </div>
+              </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioData.workPrinciples.map((principle: WorkPrinciple, index: number) => {
-            const Icon = iconsMap[index] || Box;
-            return (
-              <motion.div
-                key={principle.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative"
-              >
-                {/* Card Glow Background */}
-                <div className="absolute -inset-px bg-linear-to-br from-blue-500/20 via-indigo-500/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative h-full bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all duration-500">
-                  <div className="flex items-start justify-between mb-8">
-                    <div className="h-12 w-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-tighter">
-                      Principio 0{index + 1}
+              <div className="mb-6">
+                <h4 className="text-h3 font-bold text-white mb-2 leading-tight">
+                  {item.title}{" "}
+                  <span className="text-brand-primary font-serif italic font-medium">{item.highlight}</span>
+                </h4>
+                <p className="text-text-muted text-body-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Sub-steps */}
+              <div className="space-y-3 pt-6 border-t border-border-subtle">
+                {item.steps.map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="h-1 w-1 rounded-full bg-slate-700 group-hover:bg-brand-primary transition-colors" />
+                    <span className="text-micro font-mono text-text-muted/70 group-hover:text-white/90 transition-colors uppercase tracking-wider">
+                      {step}
                     </span>
                   </div>
+                ))}
+              </div>
+            </div>
 
-                  <div className="space-y-4">
-                    <div className="space-y-1">
-                      <h4 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                        {principle.title}
-                      </h4>
-                      <span className="inline-block text-[10px] font-mono text-indigo-400/80 uppercase tracking-widest">
-                        {principle.highlight}
-                      </span>
-                    </div>
-                    
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {principle.description}
-                    </p>
-                  </div>
+            {/* Connector line for large screens */}
+            {index < approaches.length - 1 && (
+              <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20">
+                <ArrowRight className="w-8 h-8 text-white/10 group-hover:text-brand-primary/30 transition-colors" />
+              </div>
+            )}
+          </GlassCard>
+        ))}
+      </div>
 
-                  {/* Visual Detail: Corner Square */}
-                  <div className="absolute top-0 right-0 h-8 w-8 pointer-events-none overflow-hidden">
-                    <div className="absolute -top-px -right-px h-3 w-3 border-t border-r border-white/10 group-hover:border-blue-500/50 transition-colors" />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+      {/* Closing Feature: Tools of Choice */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
+        className="mt-16 p-8 rounded-3xl bg-linear-to-r from-brand-primary/5 via-brand-accent/5 to-transparent border border-border-subtle flex flex-col md:flex-row items-center justify-between gap-8"
+      >
+        <div className="flex items-center gap-6">
+          <div className="h-12 w-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary">
+            <Code2 className="w-6 h-6" />
+          </div>
+          <div>
+            <h5 className="text-white font-bold text-h3 mb-1">Stack Tecnológico Dinámico</h5>
+            <p className="text-text-muted text-body-sm">Selecciono herramientas basadas en escalabilidad y rendimiento real.</p>
+          </div>
         </div>
-
-        {/* Closing Professional Statement */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 p-8 rounded-[32px] bg-linear-to-r from-blue-500/5 via-indigo-500/5 to-transparent border border-white/5 text-center"
-        >
-          <p className="text-slate-500 text-sm max-w-2xl mx-auto">
-            "Este enfoque modular y ordenado me permite integrar de manera eficiente el frontend, backend y base de datos, buscando siempre soluciones mantenibles y seguras."
-          </p>
-        </motion.div>
-      </Container>
-    </section>
+        <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+          {["Next.js", "TypeScript", "Python", "Docker", "AWS"].map((tech) => (
+            <Badge key={tech} variant="ghost" className="bg-slate-950/40 border-border-subtle text-text-muted">{tech}</Badge>
+          ))}
+        </div>
+      </motion.div>
+    </SectionShell>
   );
 };
 
+export { WorkApproach };
 export default WorkApproach;

@@ -1,17 +1,19 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Check, Globe, Database, Sparkles, MessageCircle } from "lucide-react";
-import { Container } from "@/components/ui/Container";
+import { Check, Globe, Database, Sparkles, MessageCircle, Layers } from "lucide-react";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { cn } from "@/lib/utils";
+import { SectionShell } from "@/components/ui/SectionShell";
+import { Glow } from "@/components/ui/Glow";
 
 const capabilities = [
   {
     title: "Sistemas Web",
     description: "Desarrollo de interfaces dinámicas y escalables con enfoque en rendimiento.",
     icon: Globe,
-    color: "from-blue-500/20 to-cyan-500/10",
-    iconColor: "text-blue-400",
+    color: "var(--color-brand-accent)",
     features: [
       "Interfaces modernas y responsivas",
       "Formularios dinámicos y validación",
@@ -24,8 +26,7 @@ const capabilities = [
     title: "Bases de Datos",
     description: "Arquitectura y optimización de capas de datos para sistemas complejos.",
     icon: Database,
-    color: "from-indigo-500/30 to-purple-500/10",
-    iconColor: "text-indigo-400",
+    color: "var(--color-brand-primary)",
     isHighlighted: true,
     features: [
       "Modelado relacional (PostgreSQL/MySQL)",
@@ -39,8 +40,7 @@ const capabilities = [
     title: "Datos e IA Aplicada",
     description: "Integración de inteligencia artificial y automatización en flujos reales.",
     icon: Sparkles,
-    color: "from-emerald-500/20 to-teal-500/10",
-    iconColor: "text-emerald-400",
+    color: "var(--color-brand-secondary)",
     features: [
       "Automatización de procesos repetitivos",
       "Asistentes inteligentes (LLMs)",
@@ -53,84 +53,80 @@ const capabilities = [
 
 const CapabilityFramework = () => {
   return (
-    <section id="aportes" className="py-32 bg-slate-950 relative overflow-hidden">
-      {/* Subtle background glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <SectionShell 
+      id="aportes" 
+      containerClassName="relative"
+      showGrid={true}
+      gridOpacity={0.02}
+    >
+      {/* Subtle background glow */}
+      <Glow variant="primary" position="center" opacity={0.05} className="w-[800px] h-[800px]" />
 
-      <Container className="relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-mono tracking-widest uppercase mb-6"
-          >
-            Líneas de Trabajo
-          </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-            Áreas donde puedo <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400">aportar</span>
-          </h2>
-          <p className="text-slate-400 text-lg">
-            Soluciones técnicas adaptadas a necesidades específicas, con enfoque en calidad y mantenibilidad.
-          </p>
-        </div>
+      <SectionHeader 
+        eyebrow="Líneas de Trabajo"
+        title="Áreas donde puedo"
+        highlight="aportar"
+        description="Soluciones técnicas adaptadas a necesidades específicas, con enfoque en calidad, mantenibilidad y escalabilidad arquitectónica."
+        align="left"
+        icon={<Layers className="w-3 h-3" />}
+      />
 
-        <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
-          {capabilities.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex-1 group ${item.isHighlighted ? 'lg:scale-105 z-20' : 'z-10'}`}
-              >
-                {/* Glow effect on hover */}
-                <div className={`absolute -inset-px bg-linear-to-b ${item.color} rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
-                <div className="relative h-full flex flex-col bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-[32px] p-8 lg:p-10 hover:border-white/10 transition-all duration-500">
-                  <div className="mb-8">
-                    <div className={`h-14 w-14 rounded-2xl bg-white/5 flex items-center justify-center ${item.iconColor} mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner`}>
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent mb-8" />
-
-                  <ul className="space-y-4 mb-10 grow">
-                    {item.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-slate-300 text-sm">
-                        <div className={`mt-1 shrink-0 ${item.iconColor}`}>
-                          <Check className="w-4 h-4" />
-                        </div>
-                        <span className="leading-snug">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button 
-                    className="w-full group/btn relative py-4 px-6 rounded-2xl bg-white/5 border border-white/10 text-white font-medium text-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20 flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-2 focus-visible:outline-indigo-400"
-                    aria-label={`Conversar sobre un proyecto de ${item.title}`}
-                  >
-                    <span className="relative z-10">Conversar sobre un proyecto</span>
-                    <MessageCircle className="w-4 h-4 relative z-10 opacity-60 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
-                  </button>
+      <div className="flex flex-col lg:flex-row gap-8 justify-start items-stretch mt-16">
+        {capabilities.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <GlassCard
+              key={item.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
+              className={cn(
+                  "flex-1 p-8 lg:p-10 rounded-3xl group/card border-border-subtle bg-surface-card",
+                  item.isHighlighted ? "lg:scale-105 z-20 border-brand-primary/30" : "z-10"
+              )}
+              glowColor={item.color}
+            >
+              <div className="mb-8">
+                <div className="h-14 w-14 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover/card:scale-110 transition-transform duration-500 shadow-xl border border-border-subtle"
+                      style={{ color: item.color }}>
+                  <Icon className="w-7 h-7" />
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </Container>
-    </section>
+                <h3 className="text-h3 font-bold text-white mb-4 tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-text-muted text-body-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="h-px w-full bg-linear-to-r from-transparent via-border-subtle to-transparent mb-8" />
+
+              <ul className="space-y-4 mb-10 grow">
+                {item.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-4 text-white/80 text-body-sm group/feature">
+                    <div className="mt-1 h-5 w-5 shrink-0 flex items-center justify-center rounded-lg bg-slate-900 border border-border-subtle group-hover/feature:border-brand-primary/40 transition-colors">
+                      <Check className="w-3 h-3 text-brand-secondary" />
+                    </div>
+                    <span className="leading-snug group-hover/feature:text-white transition-colors">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button 
+                className="w-full group/btn relative py-4 px-6 rounded-xl bg-white/5 border border-border-subtle text-white font-bold text-micro uppercase tracking-[0.2em] transition-all duration-300 hover:bg-brand-primary/10 hover:border-brand-primary/30 flex items-center justify-center gap-3 overflow-hidden cursor-pointer"
+                aria-label={`Conversar sobre un proyecto de ${item.title}`}
+              >
+                <span className="relative z-10">Conectar Proyecto</span>
+                <MessageCircle className="w-4 h-4 relative z-10 opacity-60 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
+              </button>
+            </GlassCard>
+          );
+        })}
+      </div>
+    </SectionShell>
   );
 };
 
 export default CapabilityFramework;
+

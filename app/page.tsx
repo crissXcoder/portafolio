@@ -3,6 +3,7 @@ import { About } from "@/components/sections/About";
 import { Competencies } from "@/components/sections/Competencies";
 import { Projects } from "@/components/sections/Projects";
 import CapabilityFramework from "@/components/sections/CapabilityFramework";
+import ProjectApproach from "@/components/sections/ProjectApproach";
 import WorkApproach from "@/components/sections/WorkApproach";
 import { Certifications } from "@/components/sections/Certifications";
 import { Footer } from "@/components/layout/Footer";
@@ -25,7 +26,10 @@ export default function Home() {
       {/* Áreas de aporte (Pricing-style Capabilities) */}
       <CapabilityFramework />
       
-      {/* Cómo abordo los proyectos (Methodology) */}
+      {/* Cómo abordo los proyectos (Principles) */}
+      <ProjectApproach />
+      
+      {/* Mi Metodología de Ingeniería (Process) */}
       <WorkApproach />
       
       {/* Certifications & Education */}

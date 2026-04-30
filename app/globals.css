@@ -1,62 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  /* Design System Tokens */
+  /* Design System Tokens - Engineering Blueprint */
   --color-background: #020617;
   --color-foreground: #f8fafc;
-  --color-surface: #0f172a;
-  --color-border: #1e293b;
-  --color-muted: #94a3b8;
-  --color-primary: #6366f1;
-  --color-secondary: #0ea5e9;
-  --color-accent: #10b981;
-  --color-warning: #fbbf24;
-
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
+  
+  --color-brand-primary: #6366f1;   /* Indigo-500 */
+  --color-brand-secondary: #10b981; /* Emerald-500 */
+  --color-brand-accent: #38bdf8;    /* Sky-400 */
+  
+  --color-surface-card: rgba(15, 23, 42, 0.4);
+  --color-surface-hover: rgba(30, 41, 59, 0.6);
+  
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-highlight: rgba(255, 255, 255, 0.1);
+  
+  --radius-card: 24px;
+  --radius-inner: 12px;
+  
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+  --font-serif: "Geist Serif", "Lora", serif;
+  
+  /* Typographic Scale */
+  --text-display: 5rem; /* 80px */
+  --text-h1: 3.75rem;   /* 60px */
+  --text-h2: 2.5rem;    /* 40px */
+  --text-h3: 1.5rem;    /* 24px */
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-body: 1rem;    /* 16px */
+  --text-small: 0.875rem; /* 14px */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-micro: 0.625rem; /* 10px */
 }
 
 @layer base {
   :root {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
     --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-/* Custom Utilities */
-.glass-panel {
-  @apply bg-surface/80 backdrop-blur-md border border-border;
+/* Glassmorphism System */
+.glass-card {
+  @apply bg-surface-card backdrop-blur-md border border-border-subtle transition-all duration-500;
 }
 
+.glass-card-hover {
+  @apply hover:border-border-highlight hover:bg-surface-hover hover:shadow-2xl hover:shadow-brand-primary/5;
+}
+
+/* Engineering Blueprint Grid */
 .blueprint-grid {
-  background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
@@ -65,12 +73,12 @@
     text-wrap: balance;
   }
   
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-linear-to-r from-brand-primary via-brand-accent to-brand-secondary;
   }
   
-  .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-transparent;
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
   }
   
   .custom-scrollbar::-webkit-scrollbar-thumb {

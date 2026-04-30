@@ -4,14 +4,16 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/Header";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -80,7 +82,7 @@ export default function RootLayout({
           jetbrainsMono.variable
         )}
       >
-        <div className="blueprint-grid fixed inset-0 -z-10 pointer-events-none opacity-50" />
+        <div className="blueprint-grid fixed inset-0 -z-10 pointer-events-none opacity-[0.05]" />
         <Header />
         {children}
       </body>
