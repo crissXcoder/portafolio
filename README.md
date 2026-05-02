@@ -1,99 +1,68 @@
 # Portafolio Profesional de Ingeniería de Software
 
-Este repositorio contiene la arquitectura, el código fuente y el sistema de diseño del portafolio profesional de Cristhian Altamirano Montes. El proyecto ha sido concebido como una pieza de ingeniería que demuestra la capacidad técnica en el desarrollo de sistemas web modernos, la gestión de datos y la implementación de interfaces de usuario de alto rendimiento.
+Este repositorio reúne la arquitectura, el código fuente y el sistema de diseño de mi portafolio profesional. El proyecto fue desarrollado como una pieza de ingeniería orientada a demostrar capacidad técnica en desarrollo web moderno, organización de datos e implementación de interfaces de usuario de alto rendimiento.
 
-## Acceso al Proyecto en Producción
+## Proyecto en producción
 
-El proyecto se encuentra desplegado y disponible para su consulta pública en el siguiente enlace oficial:
+El portafolio se encuentra desplegado y disponible para su consulta en el siguiente enlace:
 
 [https://portafolio-theta-steel-44.vercel.app/](https://portafolio-theta-steel-44.vercel.app/)
 
 ---
 
-## Perfil del Desarrollador
+## Perfil profesional
 
-Cristhian Altamirano Montes es un desarrollador de software en formación, estudiante de Ingeniería en Sistemas de Comunicación en la Universidad Nacional de Costa Rica (UNA). Su enfoque profesional se centra en la construcción de soluciones digitales robustas, con especialización en:
+Soy Cristhian Altamirano Montes, desarrollador de software en formación y estudiante de Ingeniería en Sistemas de Comunicación en la Universidad Nacional de Costa Rica (UNA).
 
-*   Arquitectura de sistemas web escalables.
-*   Modelado y optimización de bases de datos relacionales.
-*   Integración de inteligencia artificial aplicada al software empresarial.
-*   Metodologías ágiles y gestión de proyectos tecnológicos.
+Mi enfoque profesional se orienta a la construcción de soluciones digitales robustas, con interés particular en:
 
-Posee certificaciones en Scrum Fundamentals y Ciencia de Datos, además de un Diplomado en Programación de Aplicaciones Informáticas por la UNA.
+- Arquitectura de sistemas web escalables.
+- Modelado y optimización de bases de datos relacionales.
+- Integración de inteligencia artificial aplicada al desarrollo de software.
+- Metodologías ágiles y organización de proyectos tecnológicos.
 
----
-
-## Especificaciones Técnicas y Arquitectura
-
-Este portafolio utiliza una pila tecnológica de vanguardia para garantizar la escalabilidad, el rendimiento y una experiencia de usuario fluida. La construcción del proyecto se basa en los siguientes pilares técnicos:
-
-### Stack Tecnológico Principal
-
-*   Framework: Next.js 16 (App Router)
-*   Biblioteca de Interfaz: React 19
-*   Lenguaje: TypeScript (Tipado estricto)
-*   Estilos y Diseño: Tailwind CSS 4 (Implementación moderna basada en PostCSS)
-*   Animaciones y Micro-interacciones: Framer Motion 12
-*   Gestión de Estado: Zustand y Context API
-*   Estructura de Datos: Capa centralizada en TypeScript para gestión de contenido dinámico.
-
-### Características de Ingeniería
-
-1.  Arquitectura Modular: El proyecto está organizado por secciones independientes y componentes reutilizables, facilitando el mantenimiento y la extensión de funcionalidades.
-2.  Gestión de Datos Centralizada: Todo el contenido del portafolio se gestiona a través de una capa de datos tipada, permitiendo actualizaciones rápidas sin necesidad de modificar la estructura del frontend.
-3.  Optimización de Rendimiento: Implementación de carga diferida de componentes, optimización de fuentes mediante Next/Font y cumplimiento de estándares de SEO técnico.
-4.  Diseño Responsivo: Interfaz completamente adaptada para una navegación óptima en dispositivos móviles, tabletas y ordenadores de escritorio.
+Cuento con certificación en Scrum Fundamentals, formación en Ciencia de Datos y un Diplomado en Programación de Aplicaciones Informáticas por la UNA.
 
 ---
 
-## Proyectos Destacados en el Portafolio
+## Especificaciones técnicas y arquitectura
 
-Dentro de la plataforma se presentan proyectos que evidencian la capacidad de resolución de problemas complejos:
+Este portafolio fue construido con una pila tecnológica moderna, seleccionada para favorecer el rendimiento, la mantenibilidad y una experiencia de usuario consistente.
 
-*   SIGADI-RC: Plataforma institucional para la gestión de comunidades que integra flujos administrativos, reservas y autenticación segura.
-*   AutoStock Pro S.A.: Sistema empresarial diseñado para la trazabilidad de inventarios y gestión de procesos de negocio.
-*   AstroAssist AI: Aplicación de comercio electrónico que explora la integración de asistencia inteligente mediante inteligencia artificial.
-*   DataScienceHub / TalentLink: Proyectos de ingeniería de datos enfocados en la transformación de información semiestructurada (JSON) a modelos relacionales complejos en SQL Server.
+### Stack tecnológico principal
+
+- Framework: Next.js 16 con App Router
+- Biblioteca de interfaz: React 19
+- Lenguaje: TypeScript con tipado estricto
+- Estilos y diseño: Tailwind CSS 4 con implementación moderna basada en PostCSS
+- Animaciones y microinteracciones: Framer Motion 12
+- Gestión de estado: Zustand y Context API
+- Gestión de contenido: capa centralizada de datos tipados en TypeScript
+
+### Características de ingeniería
+
+1. Arquitectura modular: el proyecto está organizado por secciones independientes y componentes reutilizables, lo que facilita el mantenimiento y la evolución del sistema.
+2. Gestión centralizada de datos: el contenido del portafolio se administra mediante una capa tipada, lo que permite actualizaciones rápidas sin modificar la estructura general del frontend.
+3. Optimización de rendimiento: se aplican técnicas de carga eficiente de componentes, optimización de fuentes con `next/font` y prácticas de SEO técnico.
+4. Diseño responsivo: la interfaz está adaptada para ofrecer una experiencia adecuada en dispositivos móviles, tabletas y escritorio.
 
 ---
 
-## Configuración y Ejecución Local
+## Proyectos destacados
 
-Para ejecutar este proyecto en un entorno local de desarrollo, siga los pasos que se detallan a continuación:
+Dentro de la plataforma se presentan proyectos que reflejan experiencia práctica en distintos contextos técnicos:
 
-### Requisitos Previos
-
-*   Node.js (Versión 18 o superior recomendada)
-*   NPM, Yarn o PNPM como gestor de paquetes.
-
-### Instalación
-
-1.  Clone el repositorio:
-    ```bash
-    git clone https://github.com/crissXcoder/portafolio.git
-    ```
-
-2.  Acceda al directorio del proyecto:
-    ```bash
-    cd portafolio
-    ```
-
-3.  Instale las dependencias necesarias:
-    ```bash
-    npm install
-    ```
-
-4.  Inicie el servidor de desarrollo:
-    ```bash
-    npm run dev
-    ```
+- SIGADI-RC: plataforma institucional para la gestión comunitaria, con flujos administrativos, reservas y autenticación segura.
+- AutoStock Pro S.A.: sistema empresarial orientado a la trazabilidad de inventarios y la gestión de procesos de negocio.
+- AstroAssist AI: aplicación de comercio electrónico que explora la integración de asistencia inteligente mediante inteligencia artificial.
+- DataScienceHub / TalentLink: proyectos de ingeniería de datos enfocados en la transformación de información semiestructurada a modelos relacionales complejos en SQL Server.
 
 ---
 
 ## Contacto Profesional
 
-*   LinkedIn: [https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
-*   GitHub: [https://github.com/crissXcoder](https://github.com/crissXcoder)
-*   Correo Electrónico: [crisaltamontes@gmail.com](mailto:crisaltamontes@gmail.com)
+- LinkedIn: [https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
+- GitHub: [https://github.com/crissXcoder](https://github.com/crissXcoder)
+- Correo Electrónico: [crisaltamontes@gmail.com](mailto:crisaltamontes@gmail.com)
 
 © 2026 Cristhian Altamirano Montes. Construido bajo los principios de ingeniería de software moderna.
