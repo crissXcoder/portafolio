@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio Profesional de Ingeniería de Software
 
-## Getting Started
+Este repositorio contiene la arquitectura, el código fuente y el sistema de diseño del portafolio profesional de Cristhian Altamirano Montes. El proyecto ha sido concebido como una pieza de ingeniería que demuestra la capacidad técnica en el desarrollo de sistemas web modernos, la gestión de datos y la implementación de interfaces de usuario de alto rendimiento.
 
-First, run the development server:
+## Acceso al Proyecto en Producción
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El proyecto se encuentra desplegado y disponible para su consulta pública en el siguiente enlace oficial:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://portafolio-theta-steel-44.vercel.app/](https://portafolio-theta-steel-44.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Perfil del Desarrollador
 
-## Learn More
+Cristhian Altamirano Montes es un desarrollador de software en formación, estudiante de Ingeniería en Sistemas de Comunicación en la Universidad Nacional de Costa Rica (UNA). Su enfoque profesional se centra en la construcción de soluciones digitales robustas, con especialización en:
 
-To learn more about Next.js, take a look at the following resources:
+*   Arquitectura de sistemas web escalables.
+*   Modelado y optimización de bases de datos relacionales.
+*   Integración de inteligencia artificial aplicada al software empresarial.
+*   Metodologías ágiles y gestión de proyectos tecnológicos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Posee certificaciones en Scrum Fundamentals y Ciencia de Datos, además de un Diplomado en Programación de Aplicaciones Informáticas por la UNA.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Especificaciones Técnicas y Arquitectura
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este portafolio utiliza una pila tecnológica de vanguardia para garantizar la escalabilidad, el rendimiento y una experiencia de usuario fluida. La construcción del proyecto se basa en los siguientes pilares técnicos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Stack Tecnológico Principal
+
+*   Framework: Next.js 16 (App Router)
+*   Biblioteca de Interfaz: React 19
+*   Lenguaje: TypeScript (Tipado estricto)
+*   Estilos y Diseño: Tailwind CSS 4 (Implementación moderna basada en PostCSS)
+*   Animaciones y Micro-interacciones: Framer Motion 12
+*   Gestión de Estado: Zustand y Context API
+*   Estructura de Datos: Capa centralizada en TypeScript para gestión de contenido dinámico.
+
+### Características de Ingeniería
+
+1.  Arquitectura Modular: El proyecto está organizado por secciones independientes y componentes reutilizables, facilitando el mantenimiento y la extensión de funcionalidades.
+2.  Gestión de Datos Centralizada: Todo el contenido del portafolio se gestiona a través de una capa de datos tipada, permitiendo actualizaciones rápidas sin necesidad de modificar la estructura del frontend.
+3.  Optimización de Rendimiento: Implementación de carga diferida de componentes, optimización de fuentes mediante Next/Font y cumplimiento de estándares de SEO técnico.
+4.  Diseño Responsivo: Interfaz completamente adaptada para una navegación óptima en dispositivos móviles, tabletas y ordenadores de escritorio.
+
+---
+
+## Proyectos Destacados en el Portafolio
+
+Dentro de la plataforma se presentan proyectos que evidencian la capacidad de resolución de problemas complejos:
+
+*   SIGADI-RC: Plataforma institucional para la gestión de comunidades que integra flujos administrativos, reservas y autenticación segura.
+*   AutoStock Pro S.A.: Sistema empresarial diseñado para la trazabilidad de inventarios y gestión de procesos de negocio.
+*   AstroAssist AI: Aplicación de comercio electrónico que explora la integración de asistencia inteligente mediante inteligencia artificial.
+*   DataScienceHub / TalentLink: Proyectos de ingeniería de datos enfocados en la transformación de información semiestructurada (JSON) a modelos relacionales complejos en SQL Server.
+
+---
+
+## Configuración y Ejecución Local
+
+Para ejecutar este proyecto en un entorno local de desarrollo, siga los pasos que se detallan a continuación:
+
+### Requisitos Previos
+
+*   Node.js (Versión 18 o superior recomendada)
+*   NPM, Yarn o PNPM como gestor de paquetes.
+
+### Instalación
+
+1.  Clone el repositorio:
+    ```bash
+    git clone https://github.com/crissXcoder/portafolio.git
+    ```
+
+2.  Acceda al directorio del proyecto:
+    ```bash
+    cd portafolio
+    ```
+
+3.  Instale las dependencias necesarias:
+    ```bash
+    npm install
+    ```
+
+4.  Inicie el servidor de desarrollo:
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## Contacto Profesional
+
+*   LinkedIn: [https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
+*   GitHub: [https://github.com/crissXcoder](https://github.com/crissXcoder)
+*   Correo Electrónico: [crisaltamontes@gmail.com](mailto:crisaltamontes@gmail.com)
+
+© 2026 Cristhian Altamirano Montes. Construido bajo los principios de ingeniería de software moderna.
