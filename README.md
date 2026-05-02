@@ -1,68 +1,77 @@
-# Portafolio Profesional de Ingeniería de Software
+<div align="center">
 
-Este repositorio reúne la arquitectura, el código fuente y el sistema de diseño de mi portafolio profesional. El proyecto fue desarrollado como una pieza de ingeniería orientada a demostrar capacidad técnica en desarrollo web moderno, organización de datos e implementación de interfaces de usuario de alto rendimiento.
+# Portafolio Profesional: Ingeniería de Software
+### Arquitectura • Sistemas Escalables • Inteligencia Artificial
 
-## Proyecto en producción
-
-El portafolio se encuentra desplegado y disponible para su consulta en el siguiente enlace:
-
-[https://portafolio-theta-steel-44.vercel.app/](https://portafolio-theta-steel-44.vercel.app/)
-
----
-
-## Perfil profesional
-
-Soy Cristhian Altamirano Montes, desarrollador de software en formación y estudiante de Ingeniería en Sistemas de Comunicación en la Universidad Nacional de Costa Rica (UNA).
-
-Mi enfoque profesional se orienta a la construcción de soluciones digitales robustas, con interés particular en:
-
-- Arquitectura de sistemas web escalables.
-- Modelado y optimización de bases de datos relacionales.
-- Integración de inteligencia artificial aplicada al desarrollo de software.
-- Metodologías ágiles y organización de proyectos tecnológicos.
-
-Cuento con certificación en Scrum Fundamentals, formación en Ciencia de Datos y un Diplomado en Programación de Aplicaciones Informáticas por la UNA.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-🚀-blue?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-theta-steel-44.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/crissXcoder)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
 
 ---
 
-## Especificaciones técnicas y arquitectura
+Este repositorio reúne la arquitectura, el código fuente y el sistema de diseño de mi portafolio profesional. Un proyecto de ingeniería orientado a demostrar capacidad técnica en desarrollo web moderno, organización de datos e interfaces de alto rendimiento.
 
-Este portafolio fue construido con una pila tecnológica moderna, seleccionada para favorecer el rendimiento, la mantenibilidad y una experiencia de usuario consistente.
+</div>
 
-### Stack tecnológico principal
+## 👨‍💻 Perfil Profesional
 
-- Framework: Next.js 16 con App Router
-- Biblioteca de interfaz: React 19
-- Lenguaje: TypeScript con tipado estricto
-- Estilos y diseño: Tailwind CSS 4 con implementación moderna basada en PostCSS
-- Animaciones y microinteracciones: Framer Motion 12
-- Gestión de estado: Zustand y Context API
-- Gestión de contenido: capa centralizada de datos tipados en TypeScript
+**Cristhian Altamirano Montes** | Desarrollador de Software en formación
+*Ingeniería en Sistemas de Comunicación — Universidad Nacional de Costa Rica (UNA)*
 
-### Características de ingeniería
+Mi enfoque se orienta a la construcción de soluciones digitales robustas y escalables, con especial interés en:
 
-1. Arquitectura modular: el proyecto está organizado por secciones independientes y componentes reutilizables, lo que facilita el mantenimiento y la evolución del sistema.
-2. Gestión centralizada de datos: el contenido del portafolio se administra mediante una capa tipada, lo que permite actualizaciones rápidas sin modificar la estructura general del frontend.
-3. Optimización de rendimiento: se aplican técnicas de carga eficiente de componentes, optimización de fuentes con `next/font` y prácticas de SEO técnico.
-4. Diseño responsivo: la interfaz está adaptada para ofrecer una experiencia adecuada en dispositivos móviles, tabletas y escritorio.
+- 🏗️ **Arquitectura de Sistemas**: Diseño modular y mantenible.
+- 🗄️ **Ingeniería de Datos**: Modelado y optimización SQL Server / PostgreSQL.
+- 🤖 **IA Aplicada**: Integración de modelos de lenguaje en flujos de trabajo.
+- ⚡ **Metodologías Ágiles**: Certificación Scrum Fundamentals.
 
 ---
 
-## Proyectos destacados
+## 🛠️ Stack Tecnológico
 
-Dentro de la plataforma se presentan proyectos que reflejan experiencia práctica en distintos contextos técnicos:
+<div align="left">
 
-- SIGADI-RC: plataforma institucional para la gestión comunitaria, con flujos administrativos, reservas y autenticación segura.
-- AutoStock Pro S.A.: sistema empresarial orientado a la trazabilidad de inventarios y la gestión de procesos de negocio.
-- AstroAssist AI: aplicación de comercio electrónico que explora la integración de asistencia inteligente mediante inteligencia artificial.
-- DataScienceHub / TalentLink: proyectos de ingeniería de datos enfocados en la transformación de información semiestructurada a modelos relacionales complejos en SQL Server.
+| Categoría | Tecnologías |
+| :--- | :--- |
+| **Core Framework** | ![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) |
+| **Styling & Motion** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion_12-0055FF?style=flat-square&logo=framer&logoColor=white) |
+| **State & Logic** | ![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square) ![Context API](https://img.shields.io/badge/Context_API-20232A?style=flat-square&logo=react) |
+| **Infrastructure** | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) |
+
+</div>
 
 ---
 
-## Contacto Profesional
+## ⚙️ Características de Ingeniería
 
-- LinkedIn: [https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
-- GitHub: [https://github.com/crissXcoder](https://github.com/crissXcoder)
-- Correo Electrónico: [crisaltamontes@gmail.com](mailto:crisaltamontes@gmail.com)
+1.  **Arquitectura Modular**: Organización por secciones independientes y componentes reutilizables (Atomic Design).
+2.  **Capa de Datos Tipada**: Gestión centralizada de contenido mediante TypeScript para garantizar integridad.
+3.  **Performance & SEO**: Carga eficiente, optimización de fuentes con `next/font` y metadatos dinámicos.
+4.  **Responsive Engineering**: Interfaz adaptada mediante un sistema de rejillas dinámico (Grid/Flexbox).
 
+---
+
+## 🚀 Proyectos Destacados
+
+- 🏥 **SIGADI-RC**: Plataforma institucional para gestión comunitaria y flujos administrativos.
+- 📦 **AutoStock Pro S.A.**: Sistema empresarial de trazabilidad de inventarios y procesos de negocio.
+- 🌌 **AstroAssist AI**: E-commerce con integración de asistencia inteligente mediante IA.
+- 📊 **DataScienceHub**: Ingeniería de datos y transformación de modelos relacionales complejos.
+
+---
+
+## 📧 Contacto Profesional
+
+<div align="left">
+
+[![Email](https://img.shields.io/badge/Email-crisaltamontes%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:crisaltamontes@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristhian_Altamirano-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cristhian-altamirano-montes-31b8013b5)
+[![GitHub](https://img.shields.io/badge/GitHub-crissXcoder-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/crissXcoder)
+
+</div>
+
+<br />
+
+<div align="center">
 © 2026 Cristhian Altamirano Montes. Construido bajo los principios de ingeniería de software moderna.
+</div>
